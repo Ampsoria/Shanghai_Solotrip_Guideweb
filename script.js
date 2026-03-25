@@ -1171,41 +1171,88 @@ renderItinerary("3");
 
 // ---- Phrasebook Data ----
 const phrases = [
-    { cat: "👋 ทักทาย", items: [
+    { cat: "👋 ทักทาย & พื้นฐาน", items: [
         { cn: "你好", pinyin: "nǐ hǎo", th: "หนี่ห่าว", mean: "สวัสดี" },
         { cn: "谢谢", pinyin: "xièxiè", th: "เซี่ยเซี่ย", mean: "ขอบคุณ" },
         { cn: "对不起", pinyin: "duìbuqǐ", th: "ตุ้ยปู้ฉี่", mean: "ขอโทษ" },
-        { cn: "再见", pinyin: "zàijiàn", th: "จ้ายเจี้ยน", mean: "ลาก่อน" }
+        { cn: "再见", pinyin: "zàijiàn", th: "จ้ายเจี้ยน", mean: "ลาก่อน" },
+        { cn: "请问", pinyin: "qǐngwèn", th: "ฉิ่งเวิ่น", mean: "ขอถามหน่อย" },
+        { cn: "没关系", pinyin: "méi guānxi", th: "เหมยกวานซี", mean: "ไม่เป็นไร" },
+        { cn: "我是泰国人", pinyin: "wǒ shì tàiguó rén", th: "หว่อซื่อไท่กั๋วเหริน", mean: "ฉันเป็นคนไทย" },
+        { cn: "我不会说中文", pinyin: "wǒ bú huì shuō zhōngwén", th: "หว่อปู๋ฮุ่ยซัวจงเหวิน", mean: "ฉันพูดจีนไม่ได้" }
     ]},
-    { cat: "🍜 ร้านอาหาร", items: [
+    { cat: "🍜 สั่งอาหาร", items: [
         { cn: "多少钱?", pinyin: "duōshǎo qián?", th: "ตัวเส่าเฉียน?", mean: "เท่าไร?" },
         { cn: "买单", pinyin: "mǎidān", th: "หม่ายตาน", mean: "เช็คบิล" },
         { cn: "好吃!", pinyin: "hǎo chī!", th: "ห่าวชือ!", mean: "อร่อย!" },
-        { cn: "不要辣", pinyin: "bú yào là", th: "ปู๋เย่าล่า", mean: "ไม่เอาเผ็ด" }
+        { cn: "不要辣", pinyin: "bú yào là", th: "ปู๋เย่าล่า", mean: "ไม่เอาเผ็ด" },
+        { cn: "菜单", pinyin: "càidān", th: "ไช่ตาน", mean: "เมนู" },
+        { cn: "我要这个", pinyin: "wǒ yào zhège", th: "หว่อเย่าเจ้อเก้อ", mean: "เอาอันนี้" },
+        { cn: "打包", pinyin: "dǎbāo", th: "ต่าเปา", mean: "ห่อกลับ" },
+        { cn: "一份", pinyin: "yī fèn", th: "อีเฟิ่น", mean: "หนึ่งที่" }
     ]},
     { cat: "🚇 เดินทาง", items: [
         { cn: "地铁站在哪里?", pinyin: "dìtiě zhàn zài nǎlǐ?", th: "ตี้เถี่ยจ้านจ้ายหน่าหลี่?", mean: "สถานี Metro อยู่ไหน?" },
         { cn: "我要去...", pinyin: "wǒ yào qù...", th: "หว่อเย่าชวี่...", mean: "ผม/ฉันจะไป..." },
         { cn: "打表", pinyin: "dǎ biǎo", th: "ต่าเปี่ยว", mean: "กดมิเตอร์ (แท็กซี่)" },
-        { cn: "到了", pinyin: "dào le", th: "เต้าเลอ", mean: "ถึงแล้ว" }
+        { cn: "到了", pinyin: "dào le", th: "เต้าเลอ", mean: "ถึงแล้ว" },
+        { cn: "这里停", pinyin: "zhèlǐ tíng", th: "เจ้อหลี่ถิง", mean: "จอดตรงนี้" },
+        { cn: "还有多远?", pinyin: "hái yǒu duō yuǎn?", th: "ไหโหย่วตัวหยวน?", mean: "อีกไกลไหม?" }
+    ]},
+    { cat: "🏨 ที่พัก", items: [
+        { cn: "我要住一晚", pinyin: "wǒ yào zhù yī wǎn", th: "หว่อเย่าจู้อีหว่าน", mean: "จะพักหนึ่งคืน" },
+        { cn: "有房间吗?", pinyin: "yǒu fángjiān ma?", th: "โหย่วฝางเจียนมะ?", mean: "มีห้องว่างไหม?" },
+        { cn: "钥匙", pinyin: "yàoshi", th: "เย่าซือ", mean: "กุญแจ" },
+        { cn: "空调", pinyin: "kōngtiáo", th: "คงเถียว", mean: "แอร์" },
+        { cn: "热水", pinyin: "rè shuǐ", th: "เร่อสุ่ย", mean: "น้ำร้อน" },
+        { cn: "退房", pinyin: "tuìfáng", th: "ทุ่ยฝาง", mean: "เช็คเอาท์" }
     ]},
     { cat: "🛍️ ช้อปปิ้ง", items: [
         { cn: "太贵了", pinyin: "tài guì le", th: "ไท่กุ้ยเลอ", mean: "แพงไป!" },
         { cn: "便宜一点", pinyin: "piányi yīdiǎn", th: "เพียนอี้อีเตี่ยน", mean: "ลดหน่อย" },
         { cn: "可以试吗?", pinyin: "kěyǐ shì ma?", th: "เขออี่ซื่อมะ?", mean: "ลองได้ไหม?" },
-        { cn: "我只是看看", pinyin: "wǒ zhǐ shì kànkan", th: "หว่อจื่อซื่อคั่นคัน", mean: "ดูเฉยๆ" }
+        { cn: "我只是看看", pinyin: "wǒ zhǐ shì kànkan", th: "หว่อจื่อซื่อคั่นคัน", mean: "ดูเฉยๆ" },
+        { cn: "有别的颜色吗?", pinyin: "yǒu bié de yánsè ma?", th: "โหย่วเปี๋ยเตอเหยียนเซ่อมะ?", mean: "มีสีอื่นไหม?" },
+        { cn: "可以用支付宝吗?", pinyin: "kěyǐ yòng zhīfùbǎo ma?", th: "เขออี่ย่งจือฟู่เป่ามะ?", mean: "จ่าย Alipay ได้ไหม?" }
+    ]},
+    { cat: "🔢 ตัวเลข & เวลา", items: [
+        { cn: "一二三四五", pinyin: "yī èr sān sì wǔ", th: "อี เอ้อ ซาน ซื่อ อู่", mean: "1 2 3 4 5" },
+        { cn: "六七八九十", pinyin: "liù qī bā jiǔ shí", th: "ลิ่ว ชี ปา จิ่ว สือ", mean: "6 7 8 9 10" },
+        { cn: "现在几点?", pinyin: "xiànzài jǐ diǎn?", th: "เซี่ยนจ้ายจี่เตี่ยน?", mean: "กี่โมงแล้ว?" },
+        { cn: "今天", pinyin: "jīntiān", th: "จินเทียน", mean: "วันนี้" },
+        { cn: "明天", pinyin: "míngtiān", th: "หมิงเทียน", mean: "พรุ่งนี้" },
+        { cn: "昨天", pinyin: "zuótiān", th: "จั๋วเทียน", mean: "เมื่อวาน" }
     ]},
     { cat: "🆘 ฉุกเฉิน", items: [
         { cn: "帮帮我!", pinyin: "bāng bāng wǒ!", th: "ปังปังหว่อ!", mean: "ช่วยด้วย!" },
         { cn: "我迷路了", pinyin: "wǒ mílù le", th: "หว่อหมีลู่เลอ", mean: "หลงทาง" },
         { cn: "医院", pinyin: "yīyuàn", th: "อีหยวน", mean: "โรงพยาบาล" },
-        { cn: "厕所在哪里?", pinyin: "cèsuǒ zài nǎlǐ?", th: "เช่อสั่วจ้ายหน่าหลี่?", mean: "ห้องน้ำอยู่ไหน?" }
+        { cn: "厕所在哪里?", pinyin: "cèsuǒ zài nǎlǐ?", th: "เช่อสั่วจ้ายหน่าหลี่?", mean: "ห้องน้ำอยู่ไหน?" },
+        { cn: "报警", pinyin: "bàojǐng", th: "เป้าจิ่ง", mean: "แจ้งตำรวจ" },
+        { cn: "我的东西丢了", pinyin: "wǒ de dōngxi diū le", th: "หว่อเตอตงซีติวเลอ", mean: "ของฉันหาย" }
     ]},
-    { cat: "📸 ถ่ายรูป", items: [
+    { cat: "💊 สุขภาพ & ร่างกาย", items: [
+        { cn: "我不舒服", pinyin: "wǒ bù shūfu", th: "หว่อปู้ซูฝู", mean: "ไม่สบาย" },
+        { cn: "头疼", pinyin: "tóu téng", th: "โถวเถิง", mean: "ปวดหัว" },
+        { cn: "肚子疼", pinyin: "dùzi téng", th: "ตู้จือเถิง", mean: "ปวดท้อง" },
+        { cn: "发烧", pinyin: "fāshāo", th: "ฟาเซา", mean: "เป็นไข้" },
+        { cn: "药店", pinyin: "yàodiàn", th: "เย่าเตี้ยน", mean: "ร้านขายยา" },
+        { cn: "过敏", pinyin: "guòmǐn", th: "กั้วหมิ่น", mean: "แพ้ (อาหาร/ยา)" }
+    ]},
+    { cat: "📸 ถ่ายรูป & โซเชียล", items: [
         { cn: "可以拍照吗?", pinyin: "kěyǐ pāizhào ma?", th: "เขออี่ไพ่จ้าวมะ?", mean: "ถ่ายรูปได้ไหม?" },
         { cn: "帮我拍照", pinyin: "bāng wǒ pāizhào", th: "ปังหว่อไพ่จ้าว", mean: "ช่วยถ่ายรูปให้หน่อย" },
         { cn: "一二三!", pinyin: "yī èr sān!", th: "อี เอ้อ ซาน!", mean: "1 2 3! (ถ่ายรูป)" },
-        { cn: "茄子!", pinyin: "qiézi!", th: "เฉียจือ!", mean: "Cheese! 📸" }
+        { cn: "茄子!", pinyin: "qiézi!", th: "เฉียจือ!", mean: "Cheese! 📸" },
+        { cn: "WiFi密码是什么?", pinyin: "WiFi mìmǎ shì shénme?", th: "WiFi มี่หม่าซื่อเสินเมอ?", mean: "รหัส WiFi คืออะไร?" }
+    ]},
+    { cat: "💬 สนทนาทั่วไป", items: [
+        { cn: "你叫什么名字?", pinyin: "nǐ jiào shénme míngzi?", th: "หนี่เจี้ยวเสินเมอหมิงจื่อ?", mean: "คุณชื่ออะไร?" },
+        { cn: "我叫...", pinyin: "wǒ jiào...", th: "หว่อเจี้ยว...", mean: "ฉันชื่อ..." },
+        { cn: "你会说英语吗?", pinyin: "nǐ huì shuō yīngyǔ ma?", th: "หนี่ฮุ่ยซัวอิงอวี่มะ?", mean: "พูดอังกฤษได้ไหม?" },
+        { cn: "听不懂", pinyin: "tīng bù dǒng", th: "ทิงปู้ต่ง", mean: "ฟังไม่เข้าใจ" },
+        { cn: "请写下来", pinyin: "qǐng xiě xiàlái", th: "ฉิ่งเสี่ยเซี่ยไหล", mean: "ช่วยเขียนให้หน่อย" },
+        { cn: "我爱上海!", pinyin: "wǒ ài shànghǎi!", th: "หว่ออ้ายซ่างไห่!", mean: "ฉันรักเซี่ยงไฮ้!" }
     ]}
 ];
 
@@ -1228,6 +1275,295 @@ function renderPhrasebook() {
     `).join("");
 }
 renderPhrasebook();
+
+// ---- Thai-Chinese Translator ----
+const dictionary = [
+    {th:"สวัสดี",cn:"你好",py:"nǐ hǎo",read:"หนี่ห่าว"},{th:"ขอบคุณ",cn:"谢谢",py:"xièxiè",read:"เซี่ยเซี่ย"},
+    {th:"ขอโทษ",cn:"对不起",py:"duìbuqǐ",read:"ตุ้ยปู้ฉี่"},{th:"ลาก่อน",cn:"再见",py:"zàijiàn",read:"จ้ายเจี้ยน"},
+    {th:"เท่าไร",cn:"多少钱",py:"duōshǎo qián",read:"ตัวเส่าเฉียน"},{th:"แพง",cn:"太贵了",py:"tài guì le",read:"ไท่กุ้ยเลอ"},
+    {th:"ถูก",cn:"便宜",py:"piányi",read:"เพียนอี้"},{th:"ลด",cn:"便宜一点",py:"piányi yīdiǎn",read:"เพียนอี้อีเตี่ยน"},
+    {th:"อร่อย",cn:"好吃",py:"hǎo chī",read:"ห่าวชือ"},{th:"ไม่เผ็ด",cn:"不要辣",py:"bú yào là",read:"ปู๋เย่าล่า"},
+    {th:"น้ำ",cn:"水",py:"shuǐ",read:"สุ่ย"},{th:"เบียร์",cn:"啤酒",py:"píjiǔ",read:"ผี่จิ่ว"},
+    {th:"กาแฟ",cn:"咖啡",py:"kāfēi",read:"คาเฟย"},{th:"ชา",cn:"茶",py:"chá",read:"ฉา"},
+    {th:"ข้าว",cn:"米饭",py:"mǐfàn",read:"หมี่ฟ่าน"},{th:"ก๋วยเตี๋ยว",cn:"面条",py:"miàntiáo",read:"เมี่ยนเถียว"},
+    {th:"เบียร์",cn:"啤酒",py:"píjiǔ",read:"ผี่จิ่ว"},{th:"เช็คบิล",cn:"买单",py:"mǎidān",read:"หม่ายตาน"},
+    {th:"สถานีรถไฟ",cn:"地铁站",py:"dìtiě zhàn",read:"ตี้เถี่ยจ้าน"},{th:"ไป",cn:"去",py:"qù",read:"ชวี่"},
+    {th:"มา",cn:"来",py:"lái",read:"ไหล"},{th:"ซ้าย",cn:"左",py:"zuǒ",read:"จั่ว"},
+    {th:"ขวา",cn:"右",py:"yòu",read:"โย่ว"},{th:"ตรงไป",cn:"直走",py:"zhí zǒu",read:"จื๋อโจ่ว"},
+    {th:"ห้องน้ำ",cn:"厕所",py:"cèsuǒ",read:"เช่อสั่ว"},{th:"โรงพยาบาล",cn:"医院",py:"yīyuàn",read:"อีหยวน"},
+    {th:"ช่วยด้วย",cn:"帮帮我",py:"bāng bāng wǒ",read:"ปังปังหว่อ"},{th:"หลงทาง",cn:"我迷路了",py:"wǒ mílù le",read:"หว่อหมีลู่เลอ"},
+    {th:"ถ่ายรูป",cn:"拍照",py:"pāizhào",read:"ไพ่จ้าว"},{th:"สวย",cn:"漂亮",py:"piàoliang",read:"เพี่ยวเลี่ยง"},
+    {th:"ใช่",cn:"是",py:"shì",read:"ซื่อ"},{th:"ไม่ใช่",cn:"不是",py:"bú shì",read:"ปู้ซื่อ"},
+    {th:"ต้องการ",cn:"要",py:"yào",read:"เย่า"},{th:"ไม่ต้องการ",cn:"不要",py:"bú yào",read:"ปู๋เย่า"},
+    {th:"ดี",cn:"好",py:"hǎo",read:"ห่าว"},{th:"ไม่ดี",cn:"不好",py:"bù hǎo",read:"ปู้ห่าว"},
+    {th:"ร้อน",cn:"热",py:"rè",read:"เร่อ"},{th:"หนาว",cn:"冷",py:"lěng",read:"เหลิ่ง"},
+    {th:"โรงแรม",cn:"酒店",py:"jiǔdiàn",read:"จิ่วเตี้ยน"},{th:"สนามบิน",cn:"机场",py:"jīchǎng",read:"จีฉ่าง"},
+    {th:"ตั๋ว",cn:"票",py:"piào",read:"เพี่ยว"},{th:"แผนที่",cn:"地图",py:"dìtú",read:"ตี้ถู"},
+    {th:"วันนี้",cn:"今天",py:"jīntiān",read:"จินเทียน"},{th:"พรุ่งนี้",cn:"明天",py:"míngtiān",read:"หมิงเทียน"},
+    {th:"รัก",cn:"爱",py:"ài",read:"อ้าย"},{th:"เซี่ยงไฮ้",cn:"上海",py:"shànghǎi",read:"ซ่างไห่"},
+    {th:"ไทย",cn:"泰国",py:"tàiguó",read:"ไท่กั๋ว"},{th:"คนไทย",cn:"泰国人",py:"tàiguó rén",read:"ไท่กั๋วเหริน"},
+    {th:"หนึ่ง",cn:"一",py:"yī",read:"อี"},{th:"สอง",cn:"二",py:"èr",read:"เอ้อ"},
+    {th:"สาม",cn:"三",py:"sān",read:"ซาน"},{th:"สี่",cn:"四",py:"sì",read:"ซื่อ"},
+    {th:"ห้า",cn:"五",py:"wǔ",read:"อู่"},{th:"หก",cn:"六",py:"liù",read:"ลิ่ว"},
+    {th:"เจ็ด",cn:"七",py:"qī",read:"ชี"},{th:"แปด",cn:"八",py:"bā",read:"ปา"},
+    {th:"เก้า",cn:"九",py:"jiǔ",read:"จิ่ว"},{th:"สิบ",cn:"十",py:"shí",read:"สือ"},
+    {th:"ร้อย",cn:"百",py:"bǎi",read:"ป่าย"},{th:"พัน",cn:"千",py:"qiān",read:"เชียน"},
+    {th:"เมนู",cn:"菜单",py:"càidān",read:"ไช่ตาน"},{th:"ห่อกลับ",cn:"打包",py:"dǎbāo",read:"ต่าเปา"},
+    {th:"เอาอันนี้",cn:"我要这个",py:"wǒ yào zhège",read:"หว่อเย่าเจ้อเก้อ"},
+    {th:"ขอถาม",cn:"请问",py:"qǐngwèn",read:"ฉิ่งเวิ่น"},{th:"ไม่เป็นไร",cn:"没关系",py:"méi guānxi",read:"เหมยกวานซี"},
+    {th:"ฟังไม่เข้าใจ",cn:"听不懂",py:"tīng bù dǒng",read:"ทิงปู้ต่ง"},
+    {th:"เขียน",cn:"请写下来",py:"qǐng xiě xiàlái",read:"ฉิ่งเสี่ยเซี่ยไหล"},
+    {th:"คนไทย",cn:"泰国人",py:"tàiguó rén",read:"ไท่กั๋วเหริน"},
+    {th:"พูดจีนไม่ได้",cn:"我不会说中文",py:"wǒ bú huì shuō zhōngwén",read:"หว่อปู๋ฮุ่ยซัวจงเหวิน"},
+    {th:"พูดอังกฤษ",cn:"说英语",py:"shuō yīngyǔ",read:"ซัวอิงอวี่"},
+    {th:"ชื่อ",cn:"名字",py:"míngzi",read:"หมิงจื่อ"},{th:"อายุ",cn:"年龄",py:"niánlíng",read:"เหนียนหลิง"},
+    {th:"ปวดหัว",cn:"头疼",py:"tóu téng",read:"โถวเถิง"},{th:"ปวดท้อง",cn:"肚子疼",py:"dùzi téng",read:"ตู้จือเถิง"},
+    {th:"ไม่สบาย",cn:"不舒服",py:"bù shūfu",read:"ปู้ซูฝู"},{th:"เป็นไข้",cn:"发烧",py:"fāshāo",read:"ฟาเซา"},
+    {th:"ร้านขายยา",cn:"药店",py:"yàodiàn",read:"เย่าเตี้ยน"},{th:"แพ้",cn:"过敏",py:"guòmǐn",read:"กั้วหมิ่น"},
+    {th:"โรงแรม",cn:"酒店",py:"jiǔdiàn",read:"จิ่วเตี้ยน"},{th:"ห้อง",cn:"房间",py:"fángjiān",read:"ฝางเจียน"},
+    {th:"กุญแจ",cn:"钥匙",py:"yàoshi",read:"เย่าซือ"},{th:"แอร์",cn:"空调",py:"kōngtiáo",read:"คงเถียว"},
+    {th:"เช็คเอาท์",cn:"退房",py:"tuìfáng",read:"ทุ่ยฝาง"},
+    {th:"จอดตรงนี้",cn:"这里停",py:"zhèlǐ tíng",read:"เจ้อหลี่ถิง"},
+    {th:"ไกล",cn:"远",py:"yuǎn",read:"หยวน"},{th:"ใกล้",cn:"近",py:"jìn",read:"จิ้น"},
+    {th:"ตำรวจ",cn:"警察",py:"jǐngchá",read:"จิ่งฉา"},{th:"ของหาย",cn:"东西丢了",py:"dōngxi diū le",read:"ตงซีติวเลอ"},
+    {th:"ร้อน",cn:"热",py:"rè",read:"เร่อ"},{th:"เย็น",cn:"冷",py:"lěng",read:"เหลิ่ง"},
+    {th:"WiFi",cn:"WiFi密码",py:"WiFi mìmǎ",read:"WiFi มี่หม่า"},
+    {th:"Alipay",cn:"支付宝",py:"zhīfùbǎo",read:"จือฟู่เป่า"},
+    {th:"ผิด",cn:"错",py:"cuò",read:"ชั่ว"},{th:"ถูก",cn:"对",py:"duì",read:"ตุ้ย"},
+];
+
+const translateInput = document.getElementById("translateInput");
+const translateResult = document.getElementById("translateResult");
+if (translateInput) {
+    translateInput.addEventListener("input", () => {
+        const q = translateInput.value.trim().toLowerCase();
+        if (!q) { translateResult.innerHTML = ""; return; }
+        const matches = dictionary.filter(d => d.th.includes(q) || q.includes(d.th));
+        if (matches.length === 0) {
+            translateResult.innerHTML = `<p style="color:rgba(255,255,255,0.5);">ไม่พบคำนี้ในพจนานุกรม ลองค้นคำอื่น 😊</p>`;
+        } else {
+            translateResult.innerHTML = matches.slice(0, 5).map(m => `
+                <div class="translate-card">
+                    <div class="cn-text">${m.cn}</div>
+                    <div class="pinyin">${m.py}</div>
+                    <div class="th-read">อ่านว่า: <strong>${m.read}</strong></div>
+                    <div style="margin-top:0.3rem;opacity:0.6;font-size:0.85rem;">🇹🇭 ${m.th}</div>
+                </div>
+            `).join(" ");
+        }
+    });
+}
+
+// ---- Essential Apps ----
+const essentialApps = [
+    { icon: "💳", name: "Alipay (支付宝)", desc: "จ่ายเงินทุกอย่าง! ผูกบัตร Visa/Master ได้ ใช้ Tour Pass สำหรับนักท่องเที่ยว", must: true },
+    { icon: "🗺️", name: "Baidu Maps (百度地图)", desc: "แผนที่จีนแม่นที่สุด Google Maps ใช้ไม่ได้! มี Metro Navigator ในตัว", must: true },
+    { icon: "🚕", name: "DiDi (滴滴出行)", desc: "เรียกแท็กซี่ คล้าย Grab ราคาถูกกว่าแท็กซี่ข้างทาง สั่งเป็นภาษาอังกฤษได้", must: true },
+    { icon: "💬", name: "WeChat (微信)", desc: "แอปยอดนิยมสุดในจีน! แชท สั่งอาหาร จ่ายเงิน จองตั๋ว ทำได้หมด", must: true },
+    { icon: "🔐", name: "VPN (ExpressVPN)", desc: "เข้า Google, LINE, IG, YouTube! ซื้อก่อนไป เพราะโหลดในจีนไม่ได้", must: true },
+    { icon: "🌐", name: "Google Translate", desc: "แปลภาษาแบบ Offline ได้ โหลดภาษาจีนไว้ก่อน ใช้กล้องสแกนป้ายจีน", must: false },
+    { icon: "📱", name: "Xiaohongshu (小红书)", desc: "IG ของจีน! หาจุดถ่ายรูป ร้านอาหาร คาเฟ่ลับ รีวิวจากคนจีนจริงๆ", must: false },
+    { icon: "🚆", name: "Trip.com (携程)", desc: "จองตั๋วรถไฟ เครื่องบิน โรงแรม เป็นภาษาอังกฤษ จ่ายบัตรต่างประเทศได้", must: false },
+];
+
+function renderApps() {
+    const grid = document.getElementById("appsGrid");
+    if (!grid) return;
+    grid.innerHTML = essentialApps.map(a => `
+        <div class="solo-card">
+            <div class="solo-icon">${a.icon}</div>
+            <h3>${a.name} ${a.must ? '<span style="color:#22c55e;font-size:0.8rem;">⚡ จำเป็น!</span>' : ''}</h3>
+            <p style="color: rgba(255,255,255,0.7); line-height: 1.6;">${a.desc}</p>
+        </div>
+    `).join("");
+}
+renderApps();
+
+// ---- Packing Checklist ----
+const checklistData = [
+    { cat: "📄 เอกสาร", items: ["พาสปอร์ต (เหลืออย่างน้อย 6 เดือน)", "ประกันเดินทาง", "ตั๋วเครื่องบิน (E-Ticket)", "จองโรงแรม (Print/Screenshot)", "สำเนาพาสปอร์ต (แยกเก็บ)"] },
+    { cat: "💴 การเงิน", items: ["เงินหยวนสด (~500-1,000 ¥)", "บัตร Visa/Master (ผูก Alipay แล้ว)", "Alipay Tour Pass ตั้งค่าแล้ว"] },
+    { cat: "📱 เทคโนโลยี", items: ["eSIM จีน หรือ SIM Card", "VPN โหลดและตั้งค่าแล้ว", "Powerbank (20,000 mAh)", "สายชาร์จ + Adapter (จีนใช้ปลั๊กเหมือนไทย)", "Offline Maps ดาวน์โหลดแล้ว"] },
+    { cat: "👕 เสื้อผ้า", items: ["เสื้อผ้าตามฤดูกาล", "เสื้อกันหนาว/กันลม", "รองเท้าเดินสบาย", "ร่ม/เสื้อกันฝน", "ชุดนอน"] },
+    { cat: "🧴 ของใช้", items: ["ยาส่วนตัว (แก้ปวด แก้ท้องเสีย)", "แมสก์ (ฝุ่น PM2.5)", "ทิชชู่เปียก + แห้ง", "กระเป๋าผ้า (ใส่ของ)", "แว่นกันแดด + ครีมกันแดด"] },
+];
+
+function renderChecklist() {
+    const grid = document.getElementById("checklistGrid");
+    if (!grid) return;
+    const saved = JSON.parse(localStorage.getItem("sh_checklist") || "{}");
+    let total = 0, checked = 0;
+    grid.innerHTML = checklistData.map(cat => {
+        return `<div class="solo-card"><h3>${cat.cat}</h3><div>
+            ${cat.items.map(item => {
+                total++;
+                const key = cat.cat + "_" + item;
+                const isChecked = saved[key] || false;
+                if (isChecked) checked++;
+                return `<div class="checklist-item ${isChecked ? 'checked' : ''}">
+                    <input type="checkbox" ${isChecked ? 'checked' : ''} data-key="${key}">
+                    <label>${item}</label>
+                </div>`;
+            }).join("")}
+        </div></div>`;
+    }).join("");
+    updateProgress(checked, total);
+}
+
+function updateProgress(checked, total) {
+    const pct = total > 0 ? Math.round((checked / total) * 100) : 0;
+    const fill = document.getElementById("progressFill");
+    const text = document.getElementById("progressText");
+    if (fill) fill.style.width = pct + "%";
+    if (text) text.textContent = pct + "%";
+}
+
+const checkGrid = document.getElementById("checklistGrid");
+if (checkGrid) {
+    checkGrid.addEventListener("change", e => {
+        if (!e.target.matches('input[type="checkbox"]')) return;
+        const saved = JSON.parse(localStorage.getItem("sh_checklist") || "{}");
+        saved[e.target.dataset.key] = e.target.checked;
+        localStorage.setItem("sh_checklist", JSON.stringify(saved));
+        renderChecklist();
+    });
+}
+renderChecklist();
+
+// ---- Budget Estimator ----
+const budgetStyles = {
+    budget: { label: "🎒 ประหยัด", items: [
+        { cat: "🏨 ที่พัก", detail: "Hostel / Capsule Hotel", cost: "80-150 ¥", thb: "400-750 ฿" },
+        { cat: "🍜 อาหาร", detail: "Street Food + ร้านท้องถิ่น 3 มื้อ", cost: "60-100 ¥", thb: "300-500 ฿" },
+        { cat: "🚇 เดินทาง", detail: "Metro ทั้งวัน", cost: "10-20 ¥", thb: "50-100 ฿" },
+        { cat: "🎫 ค่าเข้า", detail: "พิพิธภัณฑ์ฟรี + สถานที่ราคาถูก", cost: "0-50 ¥", thb: "0-250 ฿" },
+        { cat: "☕ ของกิน/เครื่องดื่ม", detail: "ชานม + ขนม", cost: "20-40 ¥", thb: "100-200 ฿" },
+    ], total: "170-360 ¥", totalThb: "850-1,800 ฿" },
+    mid: { label: "😊 สบายๆ", items: [
+        { cat: "🏨 ที่พัก", detail: "โรงแรม 3-4 ดาว", cost: "300-500 ¥", thb: "1,500-2,500 ฿" },
+        { cat: "🍜 อาหาร", detail: "ร้านดี 3 มื้อ (Din Tai Fung, Haidilao)", cost: "150-300 ¥", thb: "750-1,500 ฿" },
+        { cat: "🚇 เดินทาง", detail: "Metro + แท็กซี่/Didi", cost: "50-100 ¥", thb: "250-500 ฿" },
+        { cat: "🎫 ค่าเข้า", detail: "Shanghai Tower + ล่องเรือ", cost: "100-200 ¥", thb: "500-1,000 ฿" },
+        { cat: "☕ ของกิน/เครื่องดื่ม", detail: "Heytea + คาเฟ่ + ขนม", cost: "40-80 ¥", thb: "200-400 ฿" },
+    ], total: "640-1,180 ¥", totalThb: "3,200-5,900 ฿" },
+    luxury: { label: "👑 หรูหรา", items: [
+        { cat: "🏨 ที่พัก", detail: "โรงแรม 5 ดาว (Ritz-Carlton, W Hotel)", cost: "1,000-3,000 ¥", thb: "5,000-15,000 ฿" },
+        { cat: "🍜 อาหาร", detail: "Fine Dining + Rooftop Bar 3 มื้อ", cost: "500-1,500 ¥", thb: "2,500-7,500 ฿" },
+        { cat: "🚇 เดินทาง", detail: "รถเช่า + Didi Premium", cost: "200-500 ¥", thb: "1,000-2,500 ฿" },
+        { cat: "🎫 ค่าเข้า", detail: "VIP Experience ทุกที่", cost: "300-800 ¥", thb: "1,500-4,000 ฿" },
+        { cat: "🛍️ ช้อปปิ้ง", detail: "แบรนด์เนม + ของฝาก", cost: "1,000-5,000 ¥", thb: "5,000-25,000 ฿" },
+    ], total: "3,000-10,800 ¥", totalThb: "15,000-54,000 ฿" },
+};
+
+function renderBudgetEstimate(style) {
+    const container = document.getElementById("budgetEstimateContent");
+    if (!container) return;
+    const data = budgetStyles[style];
+    container.innerHTML = `
+        <div class="solo-card" style="margin-top: 1rem;">
+            <h3>${data.label} — งบรายวัน</h3>
+            <table class="budget-table">
+                <tr><th>หมวด</th><th>รายละเอียด</th><th>💴 (¥)</th><th>💵 (฿)</th></tr>
+                ${data.items.map(i => `<tr><td>${i.cat}</td><td>${i.detail}</td><td>${i.cost}</td><td>${i.thb}</td></tr>`).join("")}
+            </table>
+            <div style="text-align:center; margin-top: 1.5rem; padding-top: 1rem; border-top: 2px solid rgba(255,255,255,0.1);">
+                <p style="margin-bottom: 0.3rem;">💰 รวมต่อวัน</p>
+                <span class="budget-total">${data.total} (~${data.totalThb})</span>
+            </div>
+        </div>
+    `;
+}
+
+const budgetStyleTabs = document.getElementById("budgetStyleTabs");
+if (budgetStyleTabs) {
+    budgetStyleTabs.addEventListener("click", e => {
+        if (!e.target.matches(".filter-btn")) return;
+        budgetStyleTabs.querySelectorAll(".filter-btn").forEach(b => b.classList.remove("active"));
+        e.target.classList.add("active");
+        renderBudgetEstimate(e.target.dataset.bstyle);
+    });
+}
+renderBudgetEstimate("budget");
+
+// ---- Visa Info ----
+const visaInfo = [
+    { icon: "✅", title: "ใครใช้ได้?", desc: "คนไทย (พาสปอร์ตธรรมดา) ใช้ได้! เข้าจีนผ่าน 'เซี่ยงไฮ้' อยู่ได้ 144 ชม. (6 วัน) โดยไม่ต้องทำวีซ่า" },
+    { icon: "📋", title: "เงื่อนไขสำคัญ", desc: "ต้องมีตั๋วไปประเทศที่ 3 (เช่น ไทย→เซี่ยงไฮ้→ญี่ปุ่น) ห้ามบินกลับไทยตรง! แวะประเทศอื่นก่อน หรือซื้อตั๋วขาออกไปประเทศอื่น" },
+    { icon: "📄", title: "เอกสารที่ต้องมี", desc: "1) พาสปอร์ตเหลือ 6+ เดือน 2) ตั๋วเครื่องบินขาออก (ไปประเทศที่ 3) 3) จองโรงแรม 4) กรอก Arrival Card ที่สนามบิน" },
+    { icon: "⏰", title: "นับเวลายังไง?", desc: "144 ชม. เริ่มนับตั้งแต่วันที่เข้าประเทศ (00:00) ไม่ใช่เวลาที่ลงจากเครื่อง! เช่น ถึงวันที่ 1 → ต้องออกก่อนเที่ยงคืนวันที่ 6" },
+    { icon: "🚫", title: "ข้อห้าม", desc: "ห้ามออกนอกเขตเมือง! อยู่ได้เฉพาะเซี่ยงไฮ้, เจียงซู, เจ้อเจียง (ภูมิภาค Yangtze Delta) ถ้าไปปักกิ่งต้องทำวีซ่าแยก" },
+    { icon: "💡", title: "Tips จากคนไปแล้ว", desc: "Print ตั๋วขาออก + จองโรงแรมไว้! ด่านตม.จีนอาจขอดู ถ้าไม่มีอาจถูกปฏิเสธ WiFi ที่สนามบินช้า เตรียมข้อมูล Offline ไว้ก่อน" },
+];
+function renderVisa() {
+    const grid = document.getElementById("visaGrid");
+    if (!grid) return;
+    grid.innerHTML = visaInfo.map(v => `
+        <div class="solo-card"><div class="solo-icon">${v.icon}</div>
+        <h3>${v.title}</h3>
+        <p style="color:rgba(255,255,255,0.7);line-height:1.7;">${v.desc}</p></div>
+    `).join("");
+}
+renderVisa();
+
+// ---- Seasonal Guide ----
+const seasons = [
+    { icon: "🌸", title: "ฤดูใบไม้ผลิ (มี.ค. - พ.ค.)", temp: "15-25°C", rating: "⭐⭐⭐⭐⭐", highlights: ["🌸 ซากุระบาน (มี.ค.)", "🌤️ อากาศสบาย ไม่ร้อนไม่หนาว", "📸 ถ่ายรูปสวยทุกมุม", "👗 แต่งตัวสบาย เสื้อบาง + แจ็คเก็ต", "🔥 ช่วงเวลาที่ดีที่สุด!"] },
+    { icon: "☀️", title: "ฤดูร้อน (มิ.ย. - ส.ค.)", temp: "30-38°C", rating: "⭐⭐", highlights: ["🌧️ ฝนตก + ชื้นมาก", "😰 ร้อนจัด เหงื่อออกเยอะ", "🌙 กลางคืนสบายกว่า", "🏊 เหมาะเที่ยวในร่ม ห้าง พิพิธภัณฑ์", "💰 ราคาโรงแรมถูกกว่าไฮซีซั่น"] },
+    { icon: "🍂", title: "ฤดูใบไม้ร่วง (ก.ย. - พ.ย.)", temp: "18-28°C", rating: "⭐⭐⭐⭐⭐", highlights: ["🍁 ใบไม้เปลี่ยนสี สวยมาก!", "🦀 ฤดูปูขน (ต.ค. - พ.ย.) ต้องกิน!", "🎑 เทศกาลไหว้พระจันทร์", "👕 อากาศสบาย เหมือนหน้าหนาวไทย", "🔥 แนะนำมากเช่นกัน!"] },
+    { icon: "❄️", title: "ฤดูหนาว (ธ.ค. - ก.พ.)", temp: "0-8°C", rating: "⭐⭐⭐", highlights: ["🥶 หนาวมาก! ต้องเตรียมเสื้อหนา", "🎄 บรรยากาศคริสต์มาส + ปีใหม่", "🧧 ตรุษจีน (ม.ค./ก.พ.) คึกคัก!", "🏙️ The Bund ไฟสวยมาก", "⚠️ บางสถานที่ปิดช่วงตรุษจีน"] },
+];
+function renderSeasonal() {
+    const grid = document.getElementById("seasonalGrid");
+    if (!grid) return;
+    grid.innerHTML = seasons.map(s => `
+        <div class="solo-card"><div class="solo-icon">${s.icon}</div>
+        <h3>${s.title}</h3>
+        <p style="color:var(--accent);font-size:1.1rem;">🌡️ ${s.temp} | ${s.rating}</p>
+        <ul style="margin-top:0.5rem;">${s.highlights.map(h => `<li style="padding:0.2rem 0;color:rgba(255,255,255,0.8);">${h}</li>`).join("")}</ul>
+        </div>
+    `).join("");
+}
+renderSeasonal();
+
+// ---- Trip Countdown ----
+const tripDateInput = document.getElementById("tripDate");
+const countdownDisplay = document.getElementById("countdownDisplay");
+const savedDate = localStorage.getItem("sh_tripdate");
+if (savedDate && tripDateInput) tripDateInput.value = savedDate;
+
+function updateCountdown() {
+    if (!tripDateInput || !countdownDisplay) return;
+    const dateVal = tripDateInput.value;
+    if (!dateVal) { countdownDisplay.innerHTML = ""; return; }
+    localStorage.setItem("sh_tripdate", dateVal);
+    const now = new Date();
+    const trip = new Date(dateVal + "T00:00:00");
+    const diff = trip - now;
+    if (diff <= 0) {
+        countdownDisplay.innerHTML = `<div class="solo-card" style="text-align:center;">
+            <div style="font-size:2.5rem;">🎉✈️🇨🇳</div>
+            <h3 style="color:var(--accent);margin-top:0.5rem;">ได้เวลาไปเซี่ยงไฮ้แล้ว!</h3>
+            <p>ขอให้เที่ยวสนุกนะ! 旅途愉快!</p></div>`;
+        return;
+    }
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+    countdownDisplay.innerHTML = `<div class="solo-card" style="text-align:center;">
+        <p style="opacity:0.7;margin-bottom:0.5rem;">อีกแค่...</p>
+        <div style="display:flex;justify-content:center;gap:1.5rem;flex-wrap:wrap;">
+            <div><span style="font-size:2.5rem;font-weight:800;color:var(--accent);">${days}</span><br><span style="font-size:0.85rem;opacity:0.6;">วัน</span></div>
+            <div><span style="font-size:2.5rem;font-weight:800;color:var(--accent);">${hours}</span><br><span style="font-size:0.85rem;opacity:0.6;">ชั่วโมง</span></div>
+            <div><span style="font-size:2.5rem;font-weight:800;color:var(--accent);">${mins}</span><br><span style="font-size:0.85rem;opacity:0.6;">นาที</span></div>
+        </div>
+        <p style="margin-top:1rem;">✈️ เตรียมตัวให้พร้อม!</p>
+    </div>`;
+}
+if (tripDateInput) {
+    tripDateInput.addEventListener("change", updateCountdown);
+    updateCountdown();
+    setInterval(updateCountdown, 60000);
+}
 
 // ---- Initialize ----
 document.addEventListener("DOMContentLoaded", () => {

@@ -25,12 +25,11 @@
             <ul class="nav-links" id="navLinks">
                 <li><a href="#attractions">สถานที่</a></li>
                 <li><a href="#food">ของกิน</a></li>
-                <li><a href="#location">ตามทำเล</a></li>
-                <li><a href="#transport">การเดินทาง</a></li>
-                <li><a href="#solo">Solo Trip</a></li>
-                <li><a href="#itinerary">แพลนเที่ยว</a></li>
+                <li><a href="#itinerary">แพลน</a></li>
                 <li><a href="#phrasebook">ภาษาจีน</a></li>
-                <li><a href="#calculator">คำนวณเงิน</a></li>
+                <li><a href="#tips">Tips</a></li>
+                <li><a href="#visa">วีซ่า</a></li>
+                <li><a href="#checklist">เตรียมตัว</a></li>
                 <li><a href="#map">แผนที่</a></li>
             </ul>
         </div>
@@ -579,7 +578,100 @@
                 <h2>พูด<span class="text-gradient">จีน</span>ง่ายๆ ใช้ได้จริง!</h2>
                 <p>ประโยคจำเป็นที่ต้องรู้ พร้อมคำอ่านภาษาไทย ไม่ต้องเก่งจีนก็เที่ยวได้!</p>
             </div>
+            <div class="filter-section">
+                <h3>🔍 พิมพ์ไทย → แปลเป็นจีน</h3>
+                <div class="calculator-input" style="max-width: 500px; margin: 0 auto;">
+                    <input type="text" id="translateInput" placeholder="พิมพ์คำไทย เช่น สวัสดี, ขอบคุณ, เท่าไร..." style="width: 100%; padding: 12px 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.05); color: white; font-size: 1rem;">
+                </div>
+                <div id="translateResult" style="margin-top: 1rem; text-align: center;"></div>
+            </div>
             <div class="solo-grid" id="phraseGrid"></div>
+        </div>
+    </section>
+
+    <!-- Visa Info Section -->
+    <section id="visa">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">🛂 วีซ่า & การเข้าประเทศ</span>
+                <h2>Transit <span class="text-gradient">Visa-Free</span> 144 ชั่วโมง</h2>
+                <p>คนไทยเข้าเซี่ยงไฮ้ได้โดยไม่ต้องทำวีซ่า! แต่มีเงื่อนไขสำคัญ อ่านให้จบ!</p>
+            </div>
+            <div class="solo-grid" id="visaGrid"></div>
+        </div>
+    </section>
+
+    <!-- Seasonal Guide Section -->
+    <section id="seasonal">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">🌸 ไปเดือนไหนดี?</span>
+                <h2>เที่ยวตาม<span class="text-gradient">ฤดูกาล</span></h2>
+                <p>แต่ละเดือนมีดีต่างกัน! เลือกช่วงเวลาที่เหมาะกับสไตล์คุณ</p>
+            </div>
+            <div class="solo-grid" id="seasonalGrid"></div>
+        </div>
+    </section>
+
+    <!-- Trip Countdown -->
+    <section id="countdown">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">⏳ นับถอยหลัง</span>
+                <h2>อีก<span class="text-gradient">กี่วัน</span>จะได้ไป!</h2>
+                <p>ใส่วันเดินทาง ระบบนับถอยหลังให้!</p>
+            </div>
+            <div style="text-align: center; max-width: 500px; margin: 0 auto;">
+                <input type="date" id="tripDate" style="width: 100%; padding: 14px 18px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.05); color: white; font-size: 1.1rem; text-align: center;">
+                <div id="countdownDisplay" style="margin-top: 1.5rem;"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Essential Apps Section -->
+    <section id="apps">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">📱 แอพจำเป็น</span>
+                <h2>แอพที่<span class="text-gradient">ต้องมี</span>ก่อนบิน!</h2>
+                <p>จีนใช้แอพต่างจากไทยหมด! โหลดไว้ก่อนไป ไม่งั้นลำบากแน่ 🚨</p>
+            </div>
+            <div class="solo-grid" id="appsGrid"></div>
+        </div>
+    </section>
+
+    <!-- Packing Checklist Section -->
+    <section id="checklist">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">✅ เช็คลิสต์</span>
+                <h2>เตรียมตัว<span class="text-gradient">ก่อนไป</span></h2>
+                <p>Checklist เตรียมของก่อนบิน กดเช็คได้เลย! ระบบจำให้อัตโนมัติ 💾</p>
+            </div>
+            <div class="checklist-progress">
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+                <span class="progress-text" id="progressText">0%</span>
+            </div>
+            <div class="solo-grid" id="checklistGrid"></div>
+        </div>
+    </section>
+
+    <!-- Daily Budget Estimator -->
+    <section id="budget-estimator">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">💰 ประมาณงบ</span>
+                <h2>ต้องเตรียมเงิน<span class="text-gradient">เท่าไร</span>?</h2>
+                <p>เลือกสไตล์การเที่ยว ระบบคำนวณงบรายวันให้!</p>
+            </div>
+            <div class="filter-tabs" id="budgetStyleTabs">
+                <button class="filter-btn active" data-bstyle="budget">🎒 ประหยัด</button>
+                <button class="filter-btn" data-bstyle="mid">😊 สบายๆ</button>
+                <button class="filter-btn" data-bstyle="luxury">👑 หรูหรา</button>
+            </div>
+            <div id="budgetEstimateContent"></div>
         </div>
     </section>
 

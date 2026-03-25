@@ -1,6 +1,6 @@
 # 🇨🇳✈️ Shanghai Guide สำหรับคนไทย
 
-> เว็บแนะนำสถานที่ท่องเที่ยว ร้านอาหาร และเคล็ดลับเที่ยวเซี่ยงไฮ้ ฉบับคนไทย — จัดตามงบ จัดตามสไตล์ พร้อมแผนที่ วิธีเดินทาง และราคาเป็นบาทไทย
+> เว็บแนะนำสถานที่ท่องเที่ยว ร้านอาหาร เคล็ดลับ และภาษาจีนสำหรับเที่ยวเซี่ยงไฮ้ ฉบับคนไทย จัดตามงบ จัดตามสไตล์ พร้อมแผนที่ วิธีเดินทาง ราคาเป็นบาทไทย
 
 ![Hero](screenshots/01_hero.png)
 
@@ -10,73 +10,107 @@
 
 เว็บไซต์ Static สำหรับนักท่องเที่ยวชาวไทยที่ต้องการเที่ยวเซี่ยงไฮ้ ออกแบบมาสำหรับ **Solo Trip** โดยเฉพาะ มีข้อมูลครบถ้วนจบในเว็บเดียว ✨
 
-### ✨ Features หลัก
+### ✨ Features ทั้งหมด
 
 | Feature | รายละเอียด |
 |---------|-----------|
 | 📍 **30+ สถานที่ท่องเที่ยว** | พร้อมรูปภาพจริง ราคา วิธีเดินทาง Tips |
 | 🍜 **15 ร้านอาหารแนะนำ** | Street Food, ร้านดัง, Fine Dining พร้อมเมนูต้องสั่ง |
-| 💰 **กรองตามงบ** | สายงบน้อย / ปานกลาง / งบเยอะ |
-| 🎨 **กรองตามสไตล์** | ประวัติศาสตร์ / ช้อปปิ้ง / ธรรมชาติ / อาหาร / วิวเมือง / บันเทิง |
-| 📌 **แนะนำตามทำเล** | เลือกโซนที่อยู่ แนะนำสถานที่ใกล้เคียง |
-| 🗺️ **แผนที่ Interactive** | Leaflet.js พร้อมหมุดสีแยกตามงบ |
+| 📋 **แพลนเที่ยว 3/5 วัน** | Itinerary จัดไว้ให้แล้ว พร้อมค่าใช้จ่าย |
+| 🗣️ **ภาษาจีน 52 ประโยค** | 10 หมวด + ระบบแปลไทย→จีน พร้อมคำอ่าน |
+| 💡 **Tricks & Tips** | เคล็ดลับ VPN, Alipay, มารยาท, ถ่ายรูป |
+| 🛂 **ข้อมูลวีซ่า** | Transit Visa-Free 144 ชม. ครบทุกเงื่อนไข |
+| 🌸 **เที่ยวตามฤดูกาล** | อากาศ ไฮไลท์ คะแนนแนะนำ ทั้ง 4 ฤดู |
+| 📱 **แอพจำเป็น 8 ตัว** | Alipay, Baidu Maps, DiDi, WeChat + อื่นๆ |
+| ✅ **Checklist เตรียมตัว** | กดเช็คได้ จำให้อัตโนมัติ มี Progress Bar |
+| 💰 **ประมาณงบรายวัน** | 3 สไตล์: ประหยัด / สบายๆ / หรูหรา |
+| ⏳ **นับถอยหลัง** | ใส่วันเดินทาง ระบบนับถอยหลังให้ |
 | 💱 **คำนวณเงิน** | แปลงหยวน → บาท พร้อมราคาที่ใช้บ่อย |
-| 💡 **Tricks & Tips** | เคล็ดลับ VPN, Alipay, ภาษา, อากาศ, มารยาท |
-| 🎒 **คู่มือ Solo Trip** | แอพที่ต้องมี ความปลอดภัย งบ/วัน เตรียมตัว |
-| 📱 **Responsive** | รองรับ PC, Tablet, iPhone ทุกขนาดหน้าจอ |
+| 🗺️ **แผนที่ Interactive** | Leaflet.js พร้อมหมุดสีแยกตามงบ |
+| 📱 **Responsive** | รองรับ PC, Tablet, iPhone ทุกขนาด |
 
 ---
 
 ## 🎬 Demo
 
 ### 🏠 Hero Section
-หน้าแรกที่ดึงดูดสายตา พร้อมสถิติ 30+ สถานที่ 3 ระดับงบ 7 สไตล์
-
 ![Hero Section](screenshots/01_hero.png)
 
 ---
 
-### 📍 สถานที่ท่องเที่ยว — ระบบกรอง
-กรองสถานที่ตามงบประมาณและสไตล์ที่ชอบ แต่ละการ์ดมีรูปภาพจริง ราคา วิธีเดินทาง Tips
+### 📍 สถานที่ท่องเที่ยว
+กรองได้ตามงบประมาณและสไตล์
 
 ![Attractions](screenshots/02_attractions.png)
 
 ---
 
 ### 🍜 ของกิน & ร้านอาหาร
-แนะนำ 15 ร้าน จัดตามงบ (ถูก / ปานกลาง / หรู) พร้อมราคา ¥/฿ เมนูต้องสั่ง วิธีไป
+15 ร้าน จัดตามงบ (ถูก / ปานกลาง / หรู)
 
 ![Food Section](screenshots/03_food.png)
-
 ![Food Cards](screenshots/04_food_cards.png)
 
 ---
 
-### 📌 แนะนำตามทำเล
-เลือกโซนที่คุณพัก แนะนำสถานที่ใกล้เคียงพร้อมวิธีเดินทาง
+### 📋 แพลนเที่ยว 3/5 วัน
+สลับ tab ได้ พร้อมค่าใช้จ่ายแต่ละมื้อ
 
-![Location Section](screenshots/05_location.png)
-
----
-
-### 🚇 วิธีเดินทาง
-เปรียบเทียบ Metro, แท็กซี่, รถเมล์, เดินเท้า, Didi, เรือข้ามฟาก
-
-![Transport Section](screenshots/06_transport.png)
+![Itinerary](screenshots/10_itinerary.png)
 
 ---
 
-### 🗺️ แผนที่ Interactive
-แผนที่ Leaflet.js แสดงตำแหน่งสถานที่ทั้งหมด หมุดสีแยกตามระดับงบ
+### 🗣️ ภาษาจีน + ระบบแปล
+52 ประโยค 10 หมวด + พิมพ์ไทยแปลจีนได้เลย
 
-![Map Section](screenshots/07_map.png)
+![Phrasebook](screenshots/09_phrasebook.png)
 
 ---
 
-### 🔻 Footer
-ลิงก์ด่วน ข้อมูลเพิ่มเติม พร้อมเครดิต
+### 💡 Tricks & Tips
+8 หมวดเคล็ดลับจากคนไปมาแล้ว
 
-![Footer Section](screenshots/08_footer.png)
+![Tips](screenshots/14_tips.png)
+
+---
+
+### 🛂 วีซ่า Transit Visa-Free 144 ชม.
+เงื่อนไข เอกสาร วิธีนับเวลา ข้อห้าม
+
+![Visa Info](screenshots/15_visa.png)
+
+---
+
+### 🌸 เที่ยวตามฤดูกาล
+อากาศ ไฮไลท์ คะแนนแนะนำ ทั้ง 4 ฤดู
+
+![Seasonal Guide](screenshots/16_seasonal.png)
+
+---
+
+### 📱 แอพจำเป็น
+8 แอพที่ต้องโหลดก่อนบิน
+
+![Essential Apps](screenshots/18_apps.png)
+
+---
+
+### ✅ Checklist เตรียมตัว + 💰 ประมาณงบ
+
+![Checklist](screenshots/19_checklist.png)
+![Budget](screenshots/20_budget.png)
+
+---
+
+### 📌 แนะนำตามทำเล + 🚇 เดินทาง
+![Location](screenshots/05_location.png)
+![Transport](screenshots/06_transport.png)
+
+---
+
+### 🗺️ แผนที่ + 🔻 Footer
+![Map](screenshots/07_map.png)
+![Footer](screenshots/08_footer.png)
 
 ---
 
@@ -85,45 +119,18 @@
 | Technology | Purpose |
 |-----------|---------|
 | HTML5 | โครงสร้างเว็บ |
-| CSS3 | ดีไซน์ Dark Theme + Glassmorphism |
-| Vanilla JavaScript | Logic ทั้งหมด (กรอง, แนะนำ, คำนวณ) |
+| CSS3 | Dark Theme + Glassmorphism + Animations |
+| Vanilla JavaScript | Logic ทั้งหมด (กรอง, แนะนำ, คำนวณ, แปลภาษา) |
 | Leaflet.js | แผนที่ Interactive |
+| LocalStorage | จำ Checklist + วันเดินทาง |
 | Google Fonts | Typography (Inter + Noto Sans Thai) |
-
----
-
-## 📁 โครงสร้างโปรเจกต์
-
-```
-Shanghai_Tourism/
-├── index.html          # หน้าเว็บหลัก
-├── style.css           # CSS ทั้งหมด (Design System + Responsive)
-├── script.js           # JavaScript (ข้อมูล 30 สถานที่ + 15 ร้านอาหาร + Logic)
-├── images/             # รูปภาพสถานที่ท่องเที่ยว & ร้านอาหาร (33 รูป)
-│   ├── the_bund.jpg
-│   ├── nanjing_road.jpg
-│   ├── xiaolongbao.jpg
-│   ├── hotpot.jpg
-│   └── ... (33 files)
-├── screenshots/        # Screenshots สำหรับ README
-│   ├── 01_hero.png
-│   ├── 02_attractions.png
-│   ├── 03_food.png
-│   └── ...
-└── README.md           # ไฟล์นี้
-```
 
 ---
 
 ## 🚀 วิธีใช้งาน
 
-1. Clone หรือ Download โปรเจกต์
 ```bash
 git clone https://github.com/Ampsoria/Shanghai_Solotrip_Guideweb.git
-```
-
-2. เปิดไฟล์ `index.html` ในเบราว์เซอร์
-```bash
 open index.html
 ```
 
@@ -132,8 +139,6 @@ open index.html
 ---
 
 ## 📱 Responsive Design
-
-รองรับทุกขนาดหน้าจอ:
 
 | Breakpoint | Device |
 |-----------|--------|
