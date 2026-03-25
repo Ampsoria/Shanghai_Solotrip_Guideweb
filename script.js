@@ -1089,6 +1089,146 @@ function initMap() {
     });
 }
 
+// ---- Itinerary Data ----
+const itineraries = {
+    "3": [
+        { day: 1, title: "🏙️ Classic เซี่ยงไฮ้ — Bund + Pudong", items: [
+            { time: "🌅 เช้า", activity: "เดินริม The Bund ถ่ายรูป → อาหารเช้า เจียนปิง (แพนเค้กจีน)", cost: "~10¥" },
+            { time: "🌞 บ่าย", activity: "ข้ามฟากไป Pudong → ขึ้น Shanghai Tower ชมวิว 360° → เดิน IFC Mall", cost: "~180¥" },
+            { time: "🌙 เย็น", activity: "กิน Din Tai Fung ที่ IFC → กลับมาดูไฟ The Bund ตอนกลางคืน", cost: "~100¥" }
+        ]},
+        { day: 2, title: "🏯 วัฒนธรรม — Yu Garden + Xintiandi", items: [
+            { time: "🌅 เช้า", activity: "เที่ยวสวนหยู (Yu Garden) → กินเสี่ยวหลงเปา Nanxiang Mantou Dian", cost: "~60¥" },
+            { time: "🌞 บ่าย", activity: "เดินเล่น Xintiandi → French Concession → Wukang Road ถ่ายรูป", cost: "ฟรี" },
+            { time: "🌙 เย็น", activity: "กิน Haidilao หม้อไฟ → ช้อปปิ้ง Nanjing Road", cost: "~150¥" }
+        ]},
+        { day: 3, title: "🎨 อาร์ต + ช้อปปิ้ง", items: [
+            { time: "🌅 เช้า", activity: "Tianzifang เดินเล่นซอยศิลปะ → กาแฟ + ของที่ระลึก", cost: "~50¥" },
+            { time: "🌞 บ่าย", activity: "Jing'an Temple → Nanjing West Road ช้อปปิ้ง", cost: "~50¥" },
+            { time: "🌙 เย็น", activity: "Heytea ชานมชีส → เดิน East Nanjing Road ซื้อของฝาก", cost: "~30¥" }
+        ]}
+    ],
+    "5": [
+        { day: 1, title: "🏙️ Classic เซี่ยงไฮ้ — Bund + Pudong", items: [
+            { time: "🌅 เช้า", activity: "เดินริม The Bund → อาหารเช้า เซิงเจียนเปา Da Hu Chun", cost: "~15¥" },
+            { time: "🌞 บ่าย", activity: "ล่องเรือ Huangpu River Cruise → ขึ้น Oriental Pearl Tower", cost: "~250¥" },
+            { time: "🌙 เย็น", activity: "กิน FLAIR Rooftop Bar ดูวิว Sunset → ถ่ายรูป Bund กลางคืน", cost: "~300¥" }
+        ]},
+        { day: 2, title: "🏯 วัฒนะรรม — Old Shanghai", items: [
+            { time: "🌅 เช้า", activity: "Yu Garden + Nanxiang เสี่ยวหลงเปา → เดินตลาด City God Temple", cost: "~70¥" },
+            { time: "🌞 บ่าย", activity: "Shanghai Museum (ฟรี!) → People's Square → ถนนอาหาร Yunnan Road", cost: "~30¥" },
+            { time: "🌙 เย็น", activity: "Xintiandi กินข้าว + เดินเล่นบรรยากาศยุโรป", cost: "~100¥" }
+        ]},
+        { day: 3, title: "🌿 French Concession + Art", items: [
+            { time: "🌅 เช้า", activity: "Wukang Road ถ่ายรูป → กาแฟ French Concession", cost: "~40¥" },
+            { time: "🌞 บ่าย", activity: "Tianzifang ซอยศิลปะ → M50 Art District", cost: "~50¥" },
+            { time: "🌙 เย็น", activity: "บะหมี่ต้นหอม ร้านท้องถิ่น → 1933 Slaughterhouse ตอนกลางคืน", cost: "~30¥" }
+        ]},
+        { day: 4, title: "🎢 Disneyland / Day Trip", items: [
+            { time: "🌅 เช้า", activity: "Shanghai Disneyland (เต็มวัน) หรือ Zhujiajiao Water Town", cost: "~400¥ / ~60¥" },
+            { time: "🌞 บ่าย", activity: "เที่ยวต่อใน Disneyland หรือ นั่งเรือใน Zhujiajiao", cost: "รวมตั๋ว" },
+            { time: "🌙 เย็น", activity: "กลับเมือง → Haidilao หม้อไฟคนเดียว 24 ชม.", cost: "~150¥" }
+        ]},
+        { day: 5, title: "🛍️ ช้อปปิ้ง + ของฝาก", items: [
+            { time: "🌅 เช้า", activity: "Jing'an Temple → เจียนปิง อาหารเช้า → Heytea ชานม", cost: "~40¥" },
+            { time: "🌞 บ่าย", activity: "Nanjing Road ช้อปปิ้ง → ซื้อของฝากตลาด Yuyuan", cost: "ตามงบ" },
+            { time: "🌙 เย็น", activity: "มื้อสุดท้าย! เจียเจีย ถังเปา → ดูวิว Bund ครั้งสุดท้าย 👋", cost: "~25¥" }
+        ]}
+    ]
+};
+
+function renderItinerary(days) {
+    const container = document.getElementById("itineraryContent");
+    if (!container) return;
+    const plan = itineraries[days];
+    container.innerHTML = plan.map(d => `
+        <div class="solo-card" style="margin-bottom: 1.5rem;">
+            <div class="solo-icon">📅</div>
+            <h3>วันที่ ${d.day}: ${d.title}</h3>
+            <div class="card-info">
+                ${d.items.map(i => `
+                    <div class="card-info-row">
+                        <span class="icon">${i.time.split(" ")[0]}</span>
+                        <span class="label">${i.time.split(" ")[1]}</span>
+                        <span class="value">${i.activity} <strong style="color: var(--accent);">(${i.cost})</strong></span>
+                    </div>
+                `).join("")}
+            </div>
+        </div>
+    `).join("");
+}
+
+const itineraryTabs = document.getElementById("itineraryTabs");
+if (itineraryTabs) {
+    itineraryTabs.addEventListener("click", e => {
+        if (!e.target.matches(".filter-btn")) return;
+        itineraryTabs.querySelectorAll(".filter-btn").forEach(b => b.classList.remove("active"));
+        e.target.classList.add("active");
+        renderItinerary(e.target.dataset.itinerary);
+    });
+}
+renderItinerary("3");
+
+// ---- Phrasebook Data ----
+const phrases = [
+    { cat: "👋 ทักทาย", items: [
+        { cn: "你好", pinyin: "nǐ hǎo", th: "หนี่ห่าว", mean: "สวัสดี" },
+        { cn: "谢谢", pinyin: "xièxiè", th: "เซี่ยเซี่ย", mean: "ขอบคุณ" },
+        { cn: "对不起", pinyin: "duìbuqǐ", th: "ตุ้ยปู้ฉี่", mean: "ขอโทษ" },
+        { cn: "再见", pinyin: "zàijiàn", th: "จ้ายเจี้ยน", mean: "ลาก่อน" }
+    ]},
+    { cat: "🍜 ร้านอาหาร", items: [
+        { cn: "多少钱?", pinyin: "duōshǎo qián?", th: "ตัวเส่าเฉียน?", mean: "เท่าไร?" },
+        { cn: "买单", pinyin: "mǎidān", th: "หม่ายตาน", mean: "เช็คบิล" },
+        { cn: "好吃!", pinyin: "hǎo chī!", th: "ห่าวชือ!", mean: "อร่อย!" },
+        { cn: "不要辣", pinyin: "bú yào là", th: "ปู๋เย่าล่า", mean: "ไม่เอาเผ็ด" }
+    ]},
+    { cat: "🚇 เดินทาง", items: [
+        { cn: "地铁站在哪里?", pinyin: "dìtiě zhàn zài nǎlǐ?", th: "ตี้เถี่ยจ้านจ้ายหน่าหลี่?", mean: "สถานี Metro อยู่ไหน?" },
+        { cn: "我要去...", pinyin: "wǒ yào qù...", th: "หว่อเย่าชวี่...", mean: "ผม/ฉันจะไป..." },
+        { cn: "打表", pinyin: "dǎ biǎo", th: "ต่าเปี่ยว", mean: "กดมิเตอร์ (แท็กซี่)" },
+        { cn: "到了", pinyin: "dào le", th: "เต้าเลอ", mean: "ถึงแล้ว" }
+    ]},
+    { cat: "🛍️ ช้อปปิ้ง", items: [
+        { cn: "太贵了", pinyin: "tài guì le", th: "ไท่กุ้ยเลอ", mean: "แพงไป!" },
+        { cn: "便宜一点", pinyin: "piányi yīdiǎn", th: "เพียนอี้อีเตี่ยน", mean: "ลดหน่อย" },
+        { cn: "可以试吗?", pinyin: "kěyǐ shì ma?", th: "เขออี่ซื่อมะ?", mean: "ลองได้ไหม?" },
+        { cn: "我只是看看", pinyin: "wǒ zhǐ shì kànkan", th: "หว่อจื่อซื่อคั่นคัน", mean: "ดูเฉยๆ" }
+    ]},
+    { cat: "🆘 ฉุกเฉิน", items: [
+        { cn: "帮帮我!", pinyin: "bāng bāng wǒ!", th: "ปังปังหว่อ!", mean: "ช่วยด้วย!" },
+        { cn: "我迷路了", pinyin: "wǒ mílù le", th: "หว่อหมีลู่เลอ", mean: "หลงทาง" },
+        { cn: "医院", pinyin: "yīyuàn", th: "อีหยวน", mean: "โรงพยาบาล" },
+        { cn: "厕所在哪里?", pinyin: "cèsuǒ zài nǎlǐ?", th: "เช่อสั่วจ้ายหน่าหลี่?", mean: "ห้องน้ำอยู่ไหน?" }
+    ]},
+    { cat: "📸 ถ่ายรูป", items: [
+        { cn: "可以拍照吗?", pinyin: "kěyǐ pāizhào ma?", th: "เขออี่ไพ่จ้าวมะ?", mean: "ถ่ายรูปได้ไหม?" },
+        { cn: "帮我拍照", pinyin: "bāng wǒ pāizhào", th: "ปังหว่อไพ่จ้าว", mean: "ช่วยถ่ายรูปให้หน่อย" },
+        { cn: "一二三!", pinyin: "yī èr sān!", th: "อี เอ้อ ซาน!", mean: "1 2 3! (ถ่ายรูป)" },
+        { cn: "茄子!", pinyin: "qiézi!", th: "เฉียจือ!", mean: "Cheese! 📸" }
+    ]}
+];
+
+function renderPhrasebook() {
+    const grid = document.getElementById("phraseGrid");
+    if (!grid) return;
+    grid.innerHTML = phrases.map(p => `
+        <div class="solo-card">
+            <h3>${p.cat}</h3>
+            <div class="card-info">
+                ${p.items.map(i => `
+                    <div class="card-info-row" style="align-items: flex-start; padding: 0.6rem 0; border-bottom: 1px solid rgba(255,255,255,0.05);">
+                        <span class="icon" style="font-size: 1.3rem; min-width: 80px;">${i.cn}</span>
+                        <span class="label" style="min-width: 100px; color: var(--accent);">${i.th}</span>
+                        <span class="value">${i.mean}</span>
+                    </div>
+                `).join("")}
+            </div>
+        </div>
+    `).join("");
+}
+renderPhrasebook();
+
 // ---- Initialize ----
 document.addEventListener("DOMContentLoaded", () => {
     renderAttractions();
