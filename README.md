@@ -1,8 +1,8 @@
 # 🇨🇳✈️ Shanghai Guide สำหรับคนไทย
 
-> เว็บแนะนำสถานที่ท่องเที่ยวเซี่ยงไฮ้ ฉบับคนไทย — จัดตามงบ จัดตามสไตล์ พร้อมแผนที่ วิธีเดินทาง และราคาเป็นบาทไทย
+> เว็บแนะนำสถานที่ท่องเที่ยว ร้านอาหาร และเคล็ดลับเที่ยวเซี่ยงไฮ้ ฉบับคนไทย — จัดตามงบ จัดตามสไตล์ พร้อมแผนที่ วิธีเดินทาง และราคาเป็นบาทไทย
 
-![Hero](screenshots/hero.png)
+![Hero](screenshots/01_hero.png)
 
 ---
 
@@ -15,11 +15,13 @@
 | Feature | รายละเอียด |
 |---------|-----------|
 | 📍 **30+ สถานที่ท่องเที่ยว** | พร้อมรูปภาพจริง ราคา วิธีเดินทาง Tips |
+| 🍜 **15 ร้านอาหารแนะนำ** | Street Food, ร้านดัง, Fine Dining พร้อมเมนูต้องสั่ง |
 | 💰 **กรองตามงบ** | สายงบน้อย / ปานกลาง / งบเยอะ |
 | 🎨 **กรองตามสไตล์** | ประวัติศาสตร์ / ช้อปปิ้ง / ธรรมชาติ / อาหาร / วิวเมือง / บันเทิง |
 | 📌 **แนะนำตามทำเล** | เลือกโซนที่อยู่ แนะนำสถานที่ใกล้เคียง |
 | 🗺️ **แผนที่ Interactive** | Leaflet.js พร้อมหมุดสีแยกตามงบ |
 | 💱 **คำนวณเงิน** | แปลงหยวน → บาท พร้อมราคาที่ใช้บ่อย |
+| 💡 **Tricks & Tips** | เคล็ดลับ VPN, Alipay, ภาษา, อากาศ, มารยาท |
 | 🎒 **คู่มือ Solo Trip** | แอพที่ต้องมี ความปลอดภัย งบ/วัน เตรียมตัว |
 | 📱 **Responsive** | รองรับ PC, Tablet, iPhone ทุกขนาดหน้าจอ |
 
@@ -30,49 +32,51 @@
 ### 🏠 Hero Section
 หน้าแรกที่ดึงดูดสายตา พร้อมสถิติ 30+ สถานที่ 3 ระดับงบ 7 สไตล์
 
-![Hero Section](screenshots/hero.png)
+![Hero Section](screenshots/01_hero.png)
 
 ---
 
 ### 📍 สถานที่ท่องเที่ยว — ระบบกรอง
-กรองสถานที่ตามงบประมาณและสไตล์ที่ชอบ
+กรองสถานที่ตามงบประมาณและสไตล์ที่ชอบ แต่ละการ์ดมีรูปภาพจริง ราคา วิธีเดินทาง Tips
 
-![Attractions Filter](screenshots/attractions.png)
+![Attractions](screenshots/02_attractions.png)
 
 ---
 
-### 🖼️ การ์ดสถานที่พร้อมรูปภาพจริง
-แต่ละการ์ดมีรูปภาพ ราคา วิธีเดินทาง เวลาเปิด-ปิด และ Tips
+### 🍜 ของกิน & ร้านอาหาร
+แนะนำ 15 ร้าน จัดตามงบ (ถูก / ปานกลาง / หรู) พร้อมราคา ¥/฿ เมนูต้องสั่ง วิธีไป
 
-![Attraction Cards](screenshots/attractions_cards.png)
+![Food Section](screenshots/03_food.png)
+
+![Food Cards](screenshots/04_food_cards.png)
 
 ---
 
 ### 📌 แนะนำตามทำเล
 เลือกโซนที่คุณพัก แนะนำสถานที่ใกล้เคียงพร้อมวิธีเดินทาง
 
-![Location Section](screenshots/location.png)
+![Location Section](screenshots/05_location.png)
 
 ---
 
 ### 🚇 วิธีเดินทาง
 เปรียบเทียบ Metro, แท็กซี่, รถเมล์, เดินเท้า, Didi, เรือข้ามฟาก
 
-![Transport Section](screenshots/transport.png)
+![Transport Section](screenshots/06_transport.png)
 
 ---
 
 ### 🗺️ แผนที่ Interactive
 แผนที่ Leaflet.js แสดงตำแหน่งสถานที่ทั้งหมด หมุดสีแยกตามระดับงบ
 
-![Map Section](screenshots/map.png)
+![Map Section](screenshots/07_map.png)
 
 ---
 
 ### 🔻 Footer
 ลิงก์ด่วน ข้อมูลเพิ่มเติม พร้อมเครดิต
 
-![Footer Section](screenshots/footer.png)
+![Footer Section](screenshots/08_footer.png)
 
 ---
 
@@ -94,19 +98,17 @@
 Shanghai_Tourism/
 ├── index.html          # หน้าเว็บหลัก
 ├── style.css           # CSS ทั้งหมด (Design System + Responsive)
-├── script.js           # JavaScript (ข้อมูล 30 สถานที่ + Logic)
-├── images/             # รูปภาพสถานที่ท่องเที่ยว (19 รูป)
+├── script.js           # JavaScript (ข้อมูล 30 สถานที่ + 15 ร้านอาหาร + Logic)
+├── images/             # รูปภาพสถานที่ท่องเที่ยว & ร้านอาหาร (33 รูป)
 │   ├── the_bund.jpg
 │   ├── nanjing_road.jpg
-│   ├── yu_garden.jpg
-│   ├── shanghai_tower.jpg
-│   ├── oriental_pearl_tower.jpg
-│   ├── shanghai_disneyland.jpg
-│   └── ... (19 files)
+│   ├── xiaolongbao.jpg
+│   ├── hotpot.jpg
+│   └── ... (33 files)
 ├── screenshots/        # Screenshots สำหรับ README
-│   ├── hero.png
-│   ├── attractions.png
-│   ├── location.png
+│   ├── 01_hero.png
+│   ├── 02_attractions.png
+│   ├── 03_food.png
 │   └── ...
 └── README.md           # ไฟล์นี้
 ```
@@ -117,7 +119,7 @@ Shanghai_Tourism/
 
 1. Clone หรือ Download โปรเจกต์
 ```bash
-git clone https://github.com/yourusername/Shanghai_Tourism.git
+git clone https://github.com/Ampsoria/Shanghai_Solotrip_Guideweb.git
 ```
 
 2. เปิดไฟล์ `index.html` ในเบราว์เซอร์
@@ -144,6 +146,6 @@ open index.html
 
 ## 👤 ผู้จัดทำ
 
-**Made with ❤️ by Ampsoria**
+**Made with ❤️ by Ampsoria 🐥**
 
 © 2026 Shanghai Guide สำหรับคนไทย — All rights reserved

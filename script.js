@@ -421,6 +421,175 @@ const attractions = [
     }
 ];
 
+// ---- Restaurant Data ----
+const restaurants = [
+    {
+        id: 1, name: "เจียเจีย ถังเปา", nameEn: "Jia Jia Tang Bao (佳家汤包)",
+        budget: "low", type: "dumpling", avgPrice: "15-25", avgPriceTHB: "~75-125",
+        image: "images/xiaolongbao.jpg",
+        description: "ร้านเสี่ยวหลงเปาที่คนท้องถิ่นต่อคิวกินทุกวัน! ซุปเยอะมาก เปลือกบาง ไส้หมูฉ่ำ ราคาถูกกว่า Din Tai Fung เยอะ แต่อร่อยไม่แพ้กัน!",
+        address: "90 Huanghe Road, ใกล้ People's Square",
+        metro: "สาย 1, 2, 8 สถานี People's Square", hours: "07:00-14:00",
+        zone: "peoples-square", lat: 31.2360, lng: 121.4710,
+        mustTry: "เสี่ยวหลงเปาไส้หมู + ปู 🦀",
+        tips: "มาก่อน 10:00 ไม่ต้องต่อคิว! เงินสดเท่านั้น ปิดบ่าย!"
+    },
+    {
+        id: 2, name: "หนานเฉียง ม่านโถว", nameEn: "Nanxiang Mantou Dian (南翔馒头店)",
+        budget: "low", type: "dumpling", avgPrice: "15-30", avgPriceTHB: "~75-150",
+        image: "images/nanxiang_buns.jpg",
+        description: "ร้านเสี่ยวหลงเปาตำนานกว่า 100 ปี อยู่ในสวนหยู! คิวยาวตลอดแต่คุ้มค่ารอ ชั้น 1 ซื้อกลับ ชั้น 2-3 นั่งกิน ราคาต่างกัน",
+        address: "Yu Garden, 85 Yuyuan Road",
+        metro: "สาย 10 สถานี Yuyuan Garden", hours: "09:00-21:00",
+        zone: "the-bund", lat: 31.2275, lng: 121.4925,
+        mustTry: "เสี่ยวหลงเปาไส้หมูดั้งเดิม + ไส้ปูฤดูกาล",
+        tips: "ชั้น 1 ถูกสุด! ซื้อ take away ไปนั่งกินในสวนหยูก็ได้"
+    },
+    {
+        id: 3, name: "เซิงเจียน ต้าหวาง", nameEn: "Da Hu Chun (大壶春)",
+        budget: "low", type: "dumpling", avgPrice: "10-20", avgPriceTHB: "~50-100",
+        image: "images/shengjian_bao.jpg",
+        description: "ร้านเซิงเจียนเปา (ซาลาเปาทอดก้นกรอบ) ตำนานเซี่ยงไฮ้! ก้นกรอบ ข้างในนุ่ม น้ำซุปเต็มๆ ราคาถูกมาก เป็นอาหารเช้าสุดคลาสสิก",
+        address: "หลายสาขา สาขา Sichuan Middle Road ดังสุด",
+        metro: "สาย 2, 10 สถานี East Nanjing Road", hours: "05:30-20:00",
+        zone: "the-bund", lat: 31.2395, lng: 121.4830,
+        mustTry: "เซิงเจียนเปา 4 ลูก + นมถั่วเหลืองร้อน",
+        tips: "ระวังน้ำซุปร้อนมาก! เจาะรูเล็กๆ ดูดซุปก่อน แล้วค่อยกิน"
+    },
+    {
+        id: 4, name: "เจียนปิง (แพนเค้กจีน)", nameEn: "Jianbing Street Food (煎饼)",
+        budget: "low", type: "streetfood", avgPrice: "8-15", avgPriceTHB: "~40-75",
+        image: "images/jianbing.jpg",
+        description: "แพนเค้กจีนข้างทาง อาหารเช้ายอดฮิต! แป้งบางกรอบ ใส่ไข่ ผักชี หัวหอม ซอสถั่ว แผ่นแป้งทอดกรอบ อร่อยมาก ราคาถูกสุดๆ",
+        address: "ตามรถเข็นข้างทาง ทุกย่าน",
+        metro: "หาได้ทุกสถานี Metro", hours: "06:00-10:00 (ร้านริมทาง)",
+        zone: "peoples-square", lat: 31.2310, lng: 121.4730,
+        mustTry: "เจียนปิงใส่ไข่ 2 ฟอง + แผ่นแป้งทอดกรอบ",
+        tips: "อาหารเช้าถูกที่สุดในเซี่ยงไฮ้! หาตามรถเข็นริมทางตอนเช้า"
+    },
+    {
+        id: 5, name: "บะหมี่ต้นหอม", nameEn: "Congyou Banmian (葱油拌面)",
+        budget: "low", type: "noodle", avgPrice: "12-25", avgPriceTHB: "~60-125",
+        image: "images/scallion_noodles.jpg",
+        description: "บะหมี่ต้นหอมน้ำมัน อาหาร Signature ของเซี่ยงไฮ้! เส้นเหนียว ซอสถั่วเหลืองหอม ต้นหอมเจียวกรอบ เรียบง่ายแต่อร่อยจัด ร้านท้องถิ่นเล็กๆ บรรยากาศดี",
+        address: "ร้านท้องถิ่นทั่วเมือง (ร้านดังหลายร้าน)",
+        metro: "หาได้ทุกย่าน", hours: "06:00-21:00",
+        zone: "the-bund", lat: 31.2350, lng: 121.4840,
+        mustTry: "บะหมี่ต้นหอม + เกี๊ยวทอด (ลองซ่าง)",
+        tips: "สั่ง 葱油拌面 (cōngyóu bànmiàn) โชว์ภาษาจีนให้คนขาย!"
+    },
+    {
+        id: 6, name: "เต้าหู้เหม็น", nameEn: "Chou Doufu (臭豆腐)",
+        budget: "low", type: "streetfood", avgPrice: "10-15", avgPriceTHB: "~50-75",
+        image: "images/stinky_tofu.jpg",
+        description: "Street Food ที่ต้องลอง! กลิ่นแรงแต่รสชาติอร่อย ทอดกรอบนอก นุ่มใน ราดซอส ถ้ากล้าลองจะติดใจ! หาได้ตามตลาดเก่าทุกที่",
+        address: "ตลาด Qibao, Yu Garden, ถนน Yunnan",
+        metro: "สาย 9 สถานี Qibao (ตลาดฉีเป่า)", hours: "10:00-22:00",
+        zone: "peoples-square", lat: 31.1540, lng: 121.3580,
+        mustTry: "เต้าหู้เหม็นทอด + ซอสพริก 🌶️",
+        tips: "ร้านที่คิวยาวคืออร่อย! กล้าลองเถอะ กลิ่นแรงแต่รสดี"
+    },
+    {
+        id: 7, name: "ชานมไข่มุก Heytea", nameEn: "HEYTEA (喜茶)",
+        budget: "low", type: "drink", avgPrice: "20-35", avgPriceTHB: "~100-175",
+        image: "images/bubble_tea.jpg",
+        description: "ร้านชานมยอดฮิตอันดับ 1 ของจีน! ชาผลไม้หน้าครีมชีส ชาองุ่น ชามะม่วง สดใหม่ทุกแก้ว คิวยาวมากแต่คุ้มค่ารอ",
+        address: "หลายสาขาทั่วเมือง (Nanjing Road, Xintiandi, IFC Mall)",
+        metro: "สาขาใกล้ทุกสถานี Metro สำคัญ", hours: "10:00-22:00",
+        zone: "east-nanjing", lat: 31.2380, lng: 121.4740,
+        mustTry: "Grape Cheezo (ชาองุ่นครีมชีส) 🍇 + Mango Boom",
+        tips: "สั่งผ่านแอป WeChat Mini Program ไม่ต้องต่อคิว!"
+    },
+    {
+        id: 8, name: "Din Tai Fung", nameEn: "Din Tai Fung (鼎泰丰)",
+        budget: "mid", type: "dumpling", avgPrice: "80-150", avgPriceTHB: "~400-750",
+        image: "images/din_tai_fung.jpg",
+        description: "ร้านเสี่ยวหลงเปาระดับโลก! ติดอันดับ Michelin มีหลายสาขาในเซี่ยงไฮ้ คุณภาพคงที่ เมนูหลากหลาย บรรยากาศดี เหมาะกินคนเดียวที่เคาน์เตอร์",
+        address: "IFC Mall Lujiazui / Xintiandi / K11 Art Mall",
+        metro: "สาย 2 สถานี Lujiazui (สาขา IFC)", hours: "11:00-22:00",
+        zone: "lujiazui", lat: 31.2355, lng: 121.5020,
+        mustTry: "Pork Xiaolongbao + Truffle Xiaolongbao + Fried Rice",
+        tips: "จองคิวผ่านแอปล่วงหน้า! สาขา IFC ไม่ต้องรอนาน"
+    },
+    {
+        id: 9, name: "ไห่ตี่เลา หม้อไฟ", nameEn: "Haidilao Hot Pot (海底捞火锅)",
+        budget: "mid", type: "hotpot", avgPrice: "100-200", avgPriceTHB: "~500-1,000",
+        image: "images/hotpot.jpg",
+        description: "หม้อไฟอันดับ 1 ของจีน! Service ระดับเทพ มีเล่นมายากลระหว่างรอ ทำเล็บฟรี มีหม้อไฟคนเดียวได้! น้ำจิ้ม DIY สนุกมาก",
+        address: "หลายสาขาทั่วเมือง (Nanjing Road, Lujiazui, Jing'an)",
+        metro: "สาขาใกล้ทุกย่านสำคัญ", hours: "24 ชม. (บางสาขา)",
+        zone: "east-nanjing", lat: 31.2370, lng: 121.4720,
+        mustTry: "น้ำซุปเผ็ด+ไม่เผ็ด + เนื้อวัว + เต้าหู้ + ก๋วยเตี๋ยว",
+        tips: "จองคิวผ่านแอป Haidilao! สั่งหม้อเดี่ยว (个人锅) ได้ Solo Trip สบาย"
+    },
+    {
+        id: 10, name: "ปูขนเซี่ยงไฮ้", nameEn: "Hairy Crab Restaurant (大闸蟹)",
+        budget: "mid", type: "seafood", avgPrice: "150-300", avgPriceTHB: "~750-1,500",
+        image: "images/hairy_crab.jpg",
+        description: "ปูขนทะเลสาบ อาหาร Seasonal ชื่อดังของเซี่ยงไฮ้! ไข่ปูสีทองเข้มข้น เนื้อหวานละมุน นึ่งจิ้มน้ำส้มสายชู+ขิงซอย กินได้ช่วง ก.ย.-พ.ย. เท่านั้น!",
+        address: "ร้าน Cheng Huang Miao / Wang Bao He (หวังเป่าเหอ)",
+        metro: "สาย 10 สถานี Yuyuan Garden", hours: "11:00-21:00",
+        zone: "the-bund", lat: 31.2280, lng: 121.4920,
+        mustTry: "ปูขนนึ่ง ตัวเมีย (ไข่เยอะ) + เหล้าข้าวอุ่นจิ้มปู",
+        tips: "มีแค่ฤดูกาล ก.ย.-พ.ย.! เลือกร้านที่ขายปูจากทะเลสาบ Yangcheng"
+    },
+    {
+        id: 11, name: "ติ่มซำ", nameEn: "Canton Table Dim Sum (广州茶点)",
+        budget: "mid", type: "dimsum", avgPrice: "80-150", avgPriceTHB: "~400-750",
+        image: "images/dim_sum.jpg",
+        description: "ร้านติ่มซำสไตล์กวางตุ้ง ฮะเก๋า ซิวไม้ ชาซิ่วเปา หลากหลายเมนู สั่งจากเกวียนเข็นมาให้เลือก บรรยากาศแบบดั้งเดิม",
+        address: "Yong Kang Road / Huaihai Road",
+        metro: "สาย 1, 10 สถานี South Shaanxi Road", hours: "07:00-15:00",
+        zone: "french-concession", lat: 31.2120, lng: 121.4590,
+        mustTry: "ฮะเก๋า + ซิวไม้ + ชาซิ่วเปา + ขนมไข่",
+        tips: "มาช่วงเช้า 7:00-9:00 บรรยากาศดีสุด! สั่ง 3-4 อย่างพอ"
+    },
+    {
+        id: 12, name: "Yang's Dumplings", nameEn: "Yang's Fried Dumplings (小杨生煎)",
+        budget: "low", type: "dumpling", avgPrice: "12-25", avgPriceTHB: "~60-125",
+        image: "images/shengjian_bao.jpg",
+        description: "เชนร้านเซิงเจียนเปาชื่อดังที่สุด! ก้นกรอบสีทอง น้ำซุปเยิ้ม งาโรยหน้า หอมมาก ราคาถูก มีหลายสาขาทั่วเมือง",
+        address: "หลายสาขา — Wujiang Road (ใกล้ Nanjing Rd) ดังสุด",
+        metro: "สาย 2 สถานี West Nanjing Road", hours: "06:00-22:00",
+        zone: "jing-an", lat: 31.2320, lng: 121.4520,
+        mustTry: "เซิงเจียนเปาหมู 4 ลูก + บะหมี่ต้นหอม",
+        tips: "ราคาถูกมาก! อิ่มไม่เกิน 100 บาท สั่ง 2 เซ็ตก็ยังถูก"
+    },
+    {
+        id: 13, name: "FLAIR Rooftop", nameEn: "FLAIR Rooftop Bar & Restaurant",
+        budget: "high", type: "finedining", avgPrice: "300-800", avgPriceTHB: "~1,500-4,000",
+        image: "images/flair_rooftop.jpg",
+        description: "Rooftop Bar หรูบนชั้น 58 ของ Ritz-Carlton! วิว Pudong Skyline 180° สวยที่สุดในเซี่ยงไฮ้ ค็อกเทลรสเลิศ อาหารญี่ปุ่น-เปรู Fusion สุดพรีเมียม",
+        address: "ชั้น 58, The Ritz-Carlton, Pudong",
+        metro: "สาย 2, 14 สถานี Lujiazui", hours: "17:00-01:00",
+        zone: "lujiazui", lat: 31.2365, lng: 121.4995,
+        mustTry: "Shanghai Sunset Cocktail + Wagyu Beef Tacos",
+        tips: "มาช่วง Sunset 17:00-19:00 วิวสวยสุด! Dress code Smart Casual"
+    },
+    {
+        id: 14, name: "Mr & Mrs Bund", nameEn: "Mr & Mrs Bund (外滩18号)",
+        budget: "high", type: "finedining", avgPrice: "400-1000", avgPriceTHB: "~2,000-5,000",
+        image: "images/mr_mrs_bund.jpg",
+        description: "ร้านอาหารฝรั่งเศสระดับ Fine Dining โดยเชฟ Paul Pairet! อยู่ในอาคารเก่าริม The Bund วิวแม่น้ำสวย อาหารครีเอทีฟรสชาติเยี่ยม",
+        address: "Bund 18, 6F, 18 Zhongshan East 1st Road",
+        metro: "สาย 2, 10 สถานี East Nanjing Road", hours: "18:00-22:30",
+        zone: "the-bund", lat: 31.2410, lng: 121.4890,
+        mustTry: "Lemon Tart อันโด่งดัง + Set Menu Tasting",
+        tips: "จองล่วงหน้า 2-3 วัน! ขอโต๊ะริมหน้าต่างวิวแม่น้ำ"
+    },
+    {
+        id: 15, name: "Ultraviolet by Paul Pairet", nameEn: "Ultraviolet (紫外线)",
+        budget: "high", type: "finedining", avgPrice: "3000-6000", avgPriceTHB: "~15,000-30,000",
+        image: "images/ultraviolet.jpg",
+        description: "ร้านอาหาร 3 ดาว Michelin! ที่นั่งแค่ 10 ที่/คืน ประสบการณ์ Multi-sensory Dining สุดล้ำ มีแสง เสียง กลิ่น ประกอบทุกจาน เคยติดอันดับ 50 Best ของโลก",
+        address: "สถานที่ลับ (รับไปส่งจากจุดนัดพบ)",
+        metro: "รถรับส่งจากจุดนัดพบย่าน Bund", hours: "19:00 (รอบเดียว)",
+        zone: "the-bund", lat: 31.2400, lng: 121.4850,
+        mustTry: "20-Course Tasting Menu (ทุกจานเป็น Must!)",
+        tips: "จอง 2-3 เดือนล่วงหน้า! มีแค่ 10 ที่/คืน ประสบการณ์ครั้งหนึ่งในชีวิต"
+    }
+];
+
 // ---- Zone Data ----
 const zones = {
     "east-nanjing": {
@@ -669,6 +838,92 @@ styleFilter.addEventListener("click", e => {
     currentStyle = e.target.dataset.style;
     renderAttractions();
 });
+
+// ---- Food Section ----
+let currentFoodBudget = "all";
+
+function renderFood() {
+    const foodGrid = document.getElementById("foodGrid");
+    const noFoodResults = document.getElementById("noFoodResults");
+    if (!foodGrid) return;
+
+    let filtered = restaurants;
+    if (currentFoodBudget !== "all") {
+        filtered = restaurants.filter(r => r.budget === currentFoodBudget);
+    }
+
+    noFoodResults.style.display = filtered.length === 0 ? "block" : "none";
+
+    foodGrid.innerHTML = filtered.map(r => `
+        <div class="attraction-card">
+            ${r.image ?
+                `<div class="card-image">
+                    <img src="${r.image}" alt="${r.nameEn}" loading="lazy" onerror="this.parentElement.innerHTML='<div class=\\'card-image-placeholder\\'>🍜</div>'">
+                    <div class="card-image-overlay">
+                        <span class="budget-badge ${r.budget}">${getBudgetLabel(r.budget)}</span>
+                        <span class="price-badge">💰 ${r.avgPrice} ¥ (${r.avgPriceTHB})</span>
+                    </div>
+                </div>` :
+                `<div class="card-image-placeholder">🍜</div>`
+            }
+            <div class="card-header">
+                <div class="card-header-left">
+                    <h3>${r.name}</h3>
+                    <span class="card-name-en">${r.nameEn}</span>
+                </div>
+            </div>
+            <div class="card-body">
+                <p class="card-description">${r.description}</p>
+                <div class="card-info">
+                    <div class="card-info-row">
+                        <span class="icon">⭐</span>
+                        <span class="label">ต้องสั่ง</span>
+                        <span class="value">${r.mustTry}</span>
+                    </div>
+                    <div class="card-info-row">
+                        <span class="icon">📍</span>
+                        <span class="label">ที่อยู่</span>
+                        <span class="value">${r.address}</span>
+                    </div>
+                    <div class="card-info-row">
+                        <span class="icon">🚇</span>
+                        <span class="label">เดินทาง</span>
+                        <span class="value">${r.metro}</span>
+                    </div>
+                    <div class="card-info-row">
+                        <span class="icon">🕐</span>
+                        <span class="label">เวลาเปิด</span>
+                        <span class="value">${r.hours}</span>
+                    </div>
+                    <div class="card-info-row">
+                        <span class="icon">💡</span>
+                        <span class="label">Tips</span>
+                        <span class="value">${r.tips}</span>
+                    </div>
+                </div>
+            </div>
+            <div class="card-tags">
+                <span class="card-tag style-tag">🍜 ${r.type === 'streetfood' ? 'Street Food' : r.type === 'dumpling' ? 'เกี๊ยว/ซาลาเปา' : r.type === 'hotpot' ? 'หม้อไฟ' : r.type === 'noodle' ? 'เส้น/ก๋วยเตี๋ยว' : r.type === 'seafood' ? 'ซีฟู้ด' : r.type === 'drink' ? 'เครื่องดื่ม' : r.type === 'dimsum' ? 'ติ่มซำ' : r.type === 'finedining' ? 'Fine Dining' : r.type}</span>
+                <span class="card-tag">${getBudgetLabel(r.budget)}</span>
+            </div>
+        </div>
+    `).join("");
+}
+
+// Food Budget Filter
+const foodBudgetFilter = document.getElementById("foodBudgetFilter");
+if (foodBudgetFilter) {
+    foodBudgetFilter.addEventListener("click", e => {
+        if (!e.target.matches(".filter-btn")) return;
+        foodBudgetFilter.querySelectorAll(".filter-btn").forEach(b => b.classList.remove("active"));
+        e.target.classList.add("active");
+        currentFoodBudget = e.target.dataset.foodBudget;
+        renderFood();
+    });
+}
+
+// Init food section
+renderFood();
 
 // ---- Zone Selector ----
 function renderZone(zoneKey) {

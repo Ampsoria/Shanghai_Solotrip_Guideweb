@@ -24,6 +24,7 @@
             </button>
             <ul class="nav-links" id="navLinks">
                 <li><a href="#attractions">สถานที่</a></li>
+                <li><a href="#food">ของกิน</a></li>
                 <li><a href="#location">ตามทำเล</a></li>
                 <li><a href="#transport">การเดินทาง</a></li>
                 <li><a href="#solo">Solo Trip</a></li>
@@ -105,6 +106,34 @@
                 <!-- Cards rendered by JS -->
             </div>
             <p class="no-results" id="noResults" style="display:none;">ไม่พบสถานที่ที่ตรงกับตัวกรอง ลองเปลี่ยนตัวกรองดูนะคะ 😊</p>
+        </div>
+    </section>
+
+    <!-- Food & Restaurant Section -->
+    <section id="food">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">🍜 ของกิน & ร้านอาหาร</span>
+                <h2>กิน<span class="text-gradient">อะไรดี</span>ในเซี่ยงไฮ้?</h2>
+                <p>แนะนำร้านอาหาร Street Food และ Fine Dining จัดตามงบ พร้อมราคา วิธีไป และเมนูที่ต้องสั่ง!</p>
+            </div>
+
+            <!-- Food Budget Filter -->
+            <div class="filter-section">
+                <h3>💰 เลือกตามงบประมาณ</h3>
+                <div class="filter-tabs" id="foodBudgetFilter">
+                    <button class="filter-btn active" data-food-budget="all">ทั้งหมด</button>
+                    <button class="filter-btn budget-low" data-food-budget="low">💚 ถูก (&lt;100฿)</button>
+                    <button class="filter-btn budget-mid" data-food-budget="mid">💛 ปานกลาง (100-1,500฿)</button>
+                    <button class="filter-btn budget-high" data-food-budget="high">❤️ หรู (1,500฿+)</button>
+                </div>
+            </div>
+
+            <!-- Food Grid -->
+            <div class="attractions-grid" id="foodGrid">
+                <!-- Cards rendered by JS -->
+            </div>
+            <p class="no-results" id="noFoodResults" style="display:none;">ไม่พบร้านอาหารที่ตรงกับตัวกรอง 😊</p>
         </div>
     </section>
 
@@ -412,6 +441,115 @@
                 <span class="legend-item"><span class="legend-dot budget-dot-high"></span> งบเยอะ</span>
             </div>
             <div id="mapContainer"></div>
+        </div>
+    </section>
+
+    <!-- Tricks & Tips Section -->
+    <section id="tips">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">💡 Tricks & Tips</span>
+                <h2>เคล็ดลับ<span class="text-gradient">เด็ดๆ</span>ที่ต้องรู้!</h2>
+                <p>รวม Tips จากคนที่ไปมาแล้ว ช่วยประหยัดเงิน ประหยัดเวลา เที่ยวได้สบายขึ้น!</p>
+            </div>
+
+            <div class="solo-grid">
+                <div class="solo-card" data-reveal>
+                    <div class="solo-icon">📶</div>
+                    <h3>อินเทอร์เน็ต & VPN</h3>
+                    <ul>
+                        <li>🚫 จีนบล็อก <strong>Google, LINE, IG, Facebook, YouTube</strong></li>
+                        <li>✅ ซื้อ VPN ก่อนไป (แนะนำ ExpressVPN / NordVPN)</li>
+                        <li>✅ ซื้อ eSIM จีน ก่อนบิน (ราคา ~300-500 บาท/7 วัน)</li>
+                        <li>💡 WiFi ฟรี ตามห้าง, สตาร์บัคส์, Metro</li>
+                        <li>💡 ดาวน์โหลดแผนที่ Offline ใน Baidu Maps ไว้ก่อน</li>
+                    </ul>
+                </div>
+
+                <div class="solo-card" data-reveal>
+                    <div class="solo-icon">💳</div>
+                    <h3>การจ่ายเงิน</h3>
+                    <ul>
+                        <li>✅ สมัคร <strong>Alipay Tour Pass</strong> ก่อนไป — จ่ายได้ทุกที่!</li>
+                        <li>✅ ผูกบัตร Visa / Master กับ Alipay ได้เลย</li>
+                        <li>⚠️ ร้านเล็กๆ หลายร้าน <strong>ไม่รับเงินสด</strong> ต้อง scan QR</li>
+                        <li>💡 แลกเงินหยวนสดไว้ ~500-1,000 หยวน สำรอง</li>
+                        <li>💡 ค่าแท็กซี่ / Metro ใช้ Alipay แตะจ่ายได้</li>
+                    </ul>
+                </div>
+
+                <div class="solo-card" data-reveal>
+                    <div class="solo-icon">🗣️</div>
+                    <h3>ภาษา & การสื่อสาร</h3>
+                    <ul>
+                        <li>⚠️ คนเซี่ยงไฮ้ส่วนใหญ่ <strong>พูดอังกฤษไม่ได้</strong></li>
+                        <li>✅ เตรียมแอป <strong>Pleco</strong> (พจนานุกรม) + Google Translate Offline</li>
+                        <li>✅ เซฟรูปชื่อสถานที่ <strong>เป็นภาษาจีน</strong> ไว้โชว์คนขับแท็กซี่</li>
+                        <li>💡 ประโยคสำคัญ: 你好 (nǐ hǎo = สวัสดี), 谢谢 (xièxiè = ขอบคุณ)</li>
+                        <li>💡 多少钱 (duōshǎo qián = เท่าไร?), 地铁站 (dìtiě zhàn = สถานี Metro)</li>
+                    </ul>
+                </div>
+
+                <div class="solo-card" data-reveal>
+                    <div class="solo-icon">🌦️</div>
+                    <h3>สภาพอากาศ</h3>
+                    <ul>
+                        <li>❄️ <strong>ธ.ค. - ก.พ.:</strong> หนาวมาก 0-8°C เตรียมเสื้อหนา!</li>
+                        <li>🌸 <strong>มี.ค. - พ.ค.:</strong> อากาศดีที่สุด 15-25°C 🔥แนะนำ!</li>
+                        <li>☀️ <strong>มิ.ย. - ส.ค.:</strong> ร้อนชื้นมาก 30-38°C ฝนบ่อย</li>
+                        <li>🍂 <strong>ก.ย. - พ.ย.:</strong> สบาย 18-28°C + มีปูขน!</li>
+                        <li>💡 เช็คสภาพอากาศก่อนไปที่แอป Weather</li>
+                    </ul>
+                </div>
+
+                <div class="solo-card" data-reveal>
+                    <div class="solo-icon">🎎</div>
+                    <h3>มารยาท & วัฒนธรรม</h3>
+                    <ul>
+                        <li>✅ <strong>ต่อคิว</strong> เป็นเรื่องปกติ โดยเฉพาะร้านอาหารดัง</li>
+                        <li>✅ ให้ <strong>ทิป</strong> ไม่จำเป็น (ไม่มีวัฒนธรรมทิปในจีน)</li>
+                        <li>⚠️ <strong>อย่าพูดเรื่องการเมือง</strong> กับคนท้องถิ่น</li>
+                        <li>💡 คนจีนชอบถ่ายรูปเยอะ อย่าแปลกใจถ้ามีคนขอถ่ายรูปด้วย</li>
+                        <li>💡 เสียงดังในร้านอาหารเป็นเรื่องปกติ ไม่ใช่ไม่สุภาพ</li>
+                    </ul>
+                </div>
+
+                <div class="solo-card" data-reveal>
+                    <div class="solo-icon">🛍️</div>
+                    <h3>ช้อปปิ้ง & ต่อราคา</h3>
+                    <ul>
+                        <li>✅ ห้างใหญ่: <strong>ราคาตายตัว</strong> ไม่ต้องต่อ</li>
+                        <li>✅ ตลาด / ร้านข้างทาง: <strong>ต่อได้!</strong> เริ่มที่ 50% ของราคา</li>
+                        <li>💡 ของฝาก: ชาจีน, ผ้าไหม, ตุ๊กตาจีน จากตลาด Yuyuan ราคาดี</li>
+                        <li>💡 ร้าน Miniso / Mumuso สินค้าน่ารัก ราคาถูก!</li>
+                        <li>⚠️ ระวังของปลอม ตลาดใต้ดิน AP Plaza (ใกล้ Science Museum)</li>
+                    </ul>
+                </div>
+
+                <div class="solo-card" data-reveal>
+                    <div class="solo-icon">🏥</div>
+                    <h3>สุขภาพ & ฉุกเฉิน</h3>
+                    <ul>
+                        <li>✅ ซื้อ <strong>ประกันเดินทาง</strong> ก่อนไปเสมอ!</li>
+                        <li>✅ พกยาส่วนตัว (แก้ปวด แก้ท้องเสีย ยาแพ้)</li>
+                        <li>💡 ร้านยา: หาร้าน 药房 (yàofáng) มีทุกย่าน</li>
+                        <li>📞 เบอร์ฉุกเฉิน: <strong>120</strong> (รถพยาบาล), <strong>110</strong> (ตำรวจ)</li>
+                        <li>📞 สถานทูตไทย: <strong>+86-21-52609899</strong></li>
+                    </ul>
+                </div>
+
+                <div class="solo-card" data-reveal>
+                    <div class="solo-icon">📸</div>
+                    <h3>ถ่ายรูป & โซเชียล</h3>
+                    <ul>
+                        <li>📍 <strong>Golden Hour:</strong> 17:00-19:00 แสงสวยที่ The Bund!</li>
+                        <li>📍 ถ่ายวิว Skyline จาก <strong>ฝั่ง Bund มอง Pudong</strong> สวยสุด</li>
+                        <li>💡 ใช้ <strong>Xiaohongshu (小红书)</strong> หาจุดถ่ายรูปลับ</li>
+                        <li>💡 Powerbank เป็น <strong>สิ่งจำเป็น!</strong> ใช้แอปเยอะมาก</li>
+                        <li>⚠️ บางพิพิธภัณฑ์ <strong>ห้ามใช้แฟลช</strong> ถ่ายรูป</li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </section>
 
