@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="เว็บแนะนำสถานที่ท่องเที่ยวเซี่ยงไฮ้สำหรับคนไทย จัดหมวดตามงบประมาณและสไตล์ พร้อมแผนที่ วิธีเดินทาง และเคล็ดลับ Solo Trip — by Ampsoria">
+    <title>Shanghai Guide สำหรับคนไทย 🇨🇳✈️ | by Ampsoria</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Noto+Sans+Thai:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="#hero" class="nav-logo">
+                <span class="logo-icon">🏙️</span>
+                <span class="logo-text">Shanghai<span class="logo-highlight">Guide</span></span>
+            </a>
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#attractions">สถานที่</a></li>
+                <li><a href="#location">ตามทำเล</a></li>
+                <li><a href="#transport">การเดินทาง</a></li>
+                <li><a href="#solo">Solo Trip</a></li>
+                <li><a href="#calculator">คำนวณเงิน</a></li>
+                <li><a href="#map">แผนที่</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="hero-badge">🎒 Solo Trip Friendly</div>
+            <h1>เที่ยว<span class="text-gradient">เซี่ยงไฮ้</span><br>ฉบับคนไทย</h1>
+            <p class="hero-subtitle">คู่มือเที่ยวครบจบในเว็บเดียว — จัดตามงบ จัดตามสไตล์<br>พร้อมแผนที่ วิธีเดินทาง และราคาเป็นบาทไทย</p>
+            <div class="hero-stats">
+                <div class="stat">
+                    <span class="stat-number">30+</span>
+                    <span class="stat-label">สถานที่</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">3</span>
+                    <span class="stat-label">ระดับงบ</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">7</span>
+                    <span class="stat-label">สไตล์</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">6</span>
+                    <span class="stat-label">โซนแนะนำ</span>
+                </div>
+            </div>
+            <a href="#attractions" class="hero-cta">เริ่มสำรวจเลย ✨</a>
+        </div>
+        <div class="scroll-indicator">
+            <span>เลื่อนลง</span>
+            <div class="scroll-arrow"></div>
+        </div>
+    </section>
+
+    <!-- Attractions Section -->
+    <section id="attractions">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">📍 สถานที่ท่องเที่ยว</span>
+                <h2>เลือกตาม<span class="text-gradient">งบประมาณ</span>และ<span class="text-gradient">สไตล์</span></h2>
+                <p>กรองสถานที่ตามงบที่มีและสไตล์ที่ชอบ พร้อมราคาเป็นบาทไทย</p>
+            </div>
+
+            <!-- Budget Filter -->
+            <div class="filter-section">
+                <h3>💰 เลือกตามงบประมาณ</h3>
+                <div class="filter-tabs" id="budgetFilter">
+                    <button class="filter-btn active" data-budget="all">ทั้งหมด</button>
+                    <button class="filter-btn budget-low" data-budget="low">💚 สายงบน้อย</button>
+                    <button class="filter-btn budget-mid" data-budget="mid">💛 งบปานกลาง</button>
+                    <button class="filter-btn budget-high" data-budget="high">❤️ งบเยอะ</button>
+                </div>
+            </div>
+
+            <!-- Style Filter -->
+            <div class="filter-section">
+                <h3>🎨 เลือกตามสไตล์</h3>
+                <div class="filter-tabs" id="styleFilter">
+                    <button class="filter-btn active" data-style="all">ทั้งหมด</button>
+                    <button class="filter-btn" data-style="history">🏛️ ประวัติศาสตร์</button>
+                    <button class="filter-btn" data-style="shopping">🛍️ ช้อปปิ้ง</button>
+                    <button class="filter-btn" data-style="nature">🌿 ธรรมชาติ</button>
+                    <button class="filter-btn" data-style="food">🍜 อาหาร</button>
+                    <button class="filter-btn" data-style="view">🌃 วิวเมือง</button>
+                    <button class="filter-btn" data-style="entertainment">🎢 บันเทิง</button>
+                </div>
+            </div>
+
+            <!-- Attractions Grid -->
+            <div class="attractions-grid" id="attractionsGrid">
+                <!-- Cards rendered by JS -->
+            </div>
+            <p class="no-results" id="noResults" style="display:none;">ไม่พบสถานที่ที่ตรงกับตัวกรอง ลองเปลี่ยนตัวกรองดูนะคะ 😊</p>
+        </div>
+    </section>
+
+    <!-- Location-Based Section -->
+    <section id="location">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">📌 แนะนำตามทำเล</span>
+                <h2>อยู่แถวไหน? <span class="text-gradient">แนะนำให้!</span></h2>
+                <p>เลือกโซนที่คุณอยู่ แล้วเราจะแนะนำสถานที่ใกล้เคียงพร้อมวิธีเดินทาง</p>
+            </div>
+
+            <div class="zone-selector" id="zoneSelector">
+                <button class="zone-btn active" data-zone="east-nanjing">🚶 East Nanjing Road</button>
+                <button class="zone-btn" data-zone="the-bund">🌊 The Bund</button>
+                <button class="zone-btn" data-zone="lujiazui">🏙️ Lujiazui (ฝั่งผู่ตง)</button>
+                <button class="zone-btn" data-zone="peoples-square">⛲ People's Square</button>
+                <button class="zone-btn" data-zone="jing-an">🏛️ Jing'an</button>
+                <button class="zone-btn" data-zone="french-concession">🌳 French Concession</button>
+            </div>
+
+            <div class="zone-info" id="zoneInfo">
+                <!-- Rendered by JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Transportation Guide -->
+    <section id="transport">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">🚇 การเดินทาง</span>
+                <h2>วิธี<span class="text-gradient">เดินทาง</span>ในเซี่ยงไฮ้</h2>
+                <p>เปรียบเทียบค่าใช้จ่ายและความสะดวกของแต่ละวิธี</p>
+            </div>
+
+            <div class="transport-grid">
+                <div class="transport-card" data-reveal>
+                    <div class="transport-icon">🚇</div>
+                    <h3>รถไฟฟ้า Metro</h3>
+                    <div class="transport-price">3-10 หยวน (~15-50 บาท)</div>
+                    <ul>
+                        <li>✅ ถูกที่สุด สะดวกที่สุด</li>
+                        <li>✅ ครอบคลุมทั่วเมือง 20+ สาย</li>
+                        <li>✅ ป้ายมีภาษาอังกฤษ</li>
+                        <li>💡 ซื้อบัตร Shanghai Public Transportation Card ใช้แตะได้เลย</li>
+                        <li>⏰ เปิด 05:30 - 22:30</li>
+                    </ul>
+                    <div class="transport-tip">
+                        <strong>💡 Tip:</strong> ดาวน์โหลดแอป MetroMan เพื่อดูเส้นทาง Metro
+                    </div>
+                </div>
+
+                <div class="transport-card" data-reveal>
+                    <div class="transport-icon">🚕</div>
+                    <h3>แท็กซี่</h3>
+                    <div class="transport-price">เริ่มต้น 14 หยวน (~70 บาท)</div>
+                    <ul>
+                        <li>✅ สะดวก ไม่ต้องเปลี่ยนสาย</li>
+                        <li>✅ เหมาะกับกลุ่ม หารค่าใช้จ่ายได้</li>
+                        <li>⚠️ ช่วง Rush Hour รถติดมาก</li>
+                        <li>💡 ใช้แอป Didi (เหมือน Grab) เรียกได้</li>
+                        <li>💰 ~14 หยวนเริ่มต้น + 2.5 หยวน/กม.</li>
+                    </ul>
+                    <div class="transport-tip">
+                        <strong>💡 Tip:</strong> จดที่อยู่เป็นภาษาจีนไว้โชว์คนขับ
+                    </div>
+                </div>
+
+                <div class="transport-card" data-reveal>
+                    <div class="transport-icon">🚌</div>
+                    <h3>รถเมล์</h3>
+                    <div class="transport-price">2 หยวน (~10 บาท)</div>
+                    <ul>
+                        <li>✅ ถูกมาก ราคาเดียวตลอดสาย</li>
+                        <li>✅ ได้ชมวิวเมืองระหว่างทาง</li>
+                        <li>⚠️ ป้ายส่วนใหญ่เป็นภาษาจีน</li>
+                        <li>💡 ใช้ Baidu Map นำทาง</li>
+                        <li>⏰ เปิดให้บริการ 05:00 - 23:00</li>
+                    </ul>
+                    <div class="transport-tip">
+                        <strong>💡 Tip:</strong> เหมาะกับสายผจญภัย เตรียมแผนที่ไว้ให้พร้อม
+                    </div>
+                </div>
+
+                <div class="transport-card" data-reveal>
+                    <div class="transport-icon">🚶</div>
+                    <h3>เดินเท้า</h3>
+                    <div class="transport-price">ฟรี!</div>
+                    <ul>
+                        <li>✅ ฟรี! ได้สัมผัสบรรยากาศ</li>
+                        <li>✅ เหมาะกับย่าน The Bund, Nanjing Road</li>
+                        <li>✅ ถ่ายรูปได้ตลอดทาง</li>
+                        <li>💡 หลายสถานที่อยู่ใกล้กัน เดินถึง</li>
+                        <li>👟 เตรียมรองเท้าใส่สบาย!</li>
+                    </ul>
+                    <div class="transport-tip">
+                        <strong>💡 Tip:</strong> ย่าน French Concession เดินเที่ยวได้ทั้งวัน!
+                    </div>
+                </div>
+
+                <div class="transport-card" data-reveal>
+                    <div class="transport-icon">📱</div>
+                    <h3>Didi (แกร็บจีน)</h3>
+                    <div class="transport-price">ถูกกว่าแท็กซี่ 10-20%</div>
+                    <ul>
+                        <li>✅ สะดวก เรียกจากแอพได้เลย</li>
+                        <li>✅ เห็นราคาก่อนเรียก</li>
+                        <li>✅ มี English version</li>
+                        <li>💡 ต้องผูก Alipay หรือ WeChat Pay</li>
+                        <li>🌙 มีบริการ 24 ชม.</li>
+                    </ul>
+                    <div class="transport-tip">
+                        <strong>💡 Tip:</strong> สมัคร Alipay Tour Pass ก่อนไป!
+                    </div>
+                </div>
+
+                <div class="transport-card" data-reveal>
+                    <div class="transport-icon">⛴️</div>
+                    <h3>เรือข้ามฟาก</h3>
+                    <div class="transport-price">2 หยวน (~10 บาท)</div>
+                    <ul>
+                        <li>✅ ข้ามแม่น้ำหวงผู่ราคาถูก</li>
+                        <li>✅ วิวสวยมาก โดยเฉพาะตอนค่ำ</li>
+                        <li>✅ จาก The Bund ไป Lujiazui</li>
+                        <li>💡 ท่าเรือ Jinling Road Ferry</li>
+                        <li>⏰ เปิด 07:00 - 22:00</li>
+                    </ul>
+                    <div class="transport-tip">
+                        <strong>💡 Tip:</strong> ถูกกว่าล่องเรือท่องเที่ยวมาก! วิวเหมือนกัน
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solo Trip Tips -->
+    <section id="solo">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">🎒 เที่ยวคนเดียว</span>
+                <h2>เคล็ดลับ<span class="text-gradient">Solo Trip</span>เซี่ยงไฮ้</h2>
+                <p>เที่ยวคนเดียวไม่น่ากลัวอย่างที่คิด! เตรียมตัวดี ไปได้ทุกที่</p>
+            </div>
+
+            <div class="solo-grid">
+                <div class="solo-card" data-reveal>
+                    <div class="solo-icon">📱</div>
+                    <h3>แอพที่ต้องมี</h3>
+                    <ul>
+                        <li><strong>Alipay</strong> — จ่ายเงินทุกอย่าง (สมัคร Tour Pass)</li>
+                        <li><strong>WeChat</strong> — แชท + จ่ายเงิน</li>
+                        <li><strong>Didi</strong> — เรียกแท็กซี่</li>
+                        <li><strong>Baidu Maps</strong> — แผนที่ (Google Maps ใช้ไม่ได้)</li>
+                        <li><strong>MetroMan</strong> — เส้นทาง Metro</li>
+                        <li><strong>Pleco</strong> — พจนานุกรมจีน-อังกฤษ</li>
+                        <li><strong>VPN</strong> — ใช้ Line, IG, FB, Google</li>
+                    </ul>
+                </div>
+
+                <div class="solo-card" data-reveal>
+                    <div class="solo-icon">🛡️</div>
+                    <h3>ความปลอดภัย</h3>
+                    <ul>
+                        <li>🟢 เซี่ยงไฮ้ปลอดภัยมาก เดินกลางคืนได้</li>
+                        <li>🟢 กล้อง CCTV ทุกมุมเมือง</li>
+                        <li>🟢 ตำรวจลาดตระเวนทั่ว</li>
+                        <li>⚠️ ระวังมิจฉาชีพตามสถานที่ท่องเที่ยว</li>
+                        <li>⚠️ อย่าไปตามคนแปลกหน้าที่ชวนไป "ดื่มชา"</li>
+                        <li>💡 เซฟเบอร์สถานทูตไทย: +86-21-52609899</li>
+                    </ul>
+                </div>
+
+                <div class="solo-card" data-reveal>
+                    <div class="solo-icon">💰</div>
+                    <h3>งบประมาณ/วัน</h3>
+                    <ul>
+                        <li>🟢 <strong>สายประหยัด:</strong> ~500-800 บาท/วัน</li>
+                        <li class="sub-item">ค่าอาหาร Street Food ~150-250 บาท</li>
+                        <li class="sub-item">ค่าเดินทาง Metro ~50-100 บาท</li>
+                        <li class="sub-item">ค่าเข้าชม ~0-200 บาท</li>
+                        <li>🟡 <strong>ปานกลาง:</strong> ~1,500-2,500 บาท/วัน</li>
+                        <li>🔴 <strong>สายหรู:</strong> ~5,000+ บาท/วัน</li>
+                    </ul>
+                </div>
+
+                <div class="solo-card" data-reveal>
+                    <div class="solo-icon">🧳</div>
+                    <h3>เตรียมตัวก่อนไป</h3>
+                    <ul>
+                        <li>🛂 <strong>วีซ่า:</strong> Transit Visa-Free 144 ชม. (6 วัน)</li>
+                        <li>💳 สมัคร Alipay Tour Pass ล่วงหน้า</li>
+                        <li>📱 ซื้อ VPN ก่อนไป</li>
+                        <li>🔌 ปลั๊กไฟจีนคล้ายไทย ใช้ได้เลย</li>
+                        <li>🗣️ เตรียมประโยคจีนพื้นฐาน</li>
+                        <li>🧥 เช็คสภาพอากาศ (หนาวมาก ธ.ค.-ก.พ.)</li>
+                    </ul>
+                </div>
+
+                <div class="solo-card" data-reveal>
+                    <div class="solo-icon">🍜</div>
+                    <h3>อาหารที่ต้องลอง</h3>
+                    <ul>
+                        <li>🥟 <strong>เสี่ยวหลงเปา</strong> — ซาลาเปาน้ำซุป (ร้าน Din Tai Fung)</li>
+                        <li>🍜 <strong>เส้นหมี่ร้อน</strong> — ก๋วยเตี๋ยวท้องถิ่น</li>
+                        <li>🥘 <strong>หม้อไฟ Hotpot</strong> — กินคนเดียวได้!</li>
+                        <li>🫖 <strong>ชานมไข่มุก</strong> — สไตล์ The Alley, Heytea</li>
+                        <li>🦀 <strong>ปูขนเซี่ยงไฮ้</strong> — (ฤดูกาล ก.ย.-พ.ย.)</li>
+                        <li>💡 อาหารตามร้าน ~15-40 หยวน (~75-200 บาท)</li>
+                    </ul>
+                </div>
+
+                <div class="solo-card" data-reveal>
+                    <div class="solo-icon">📸</div>
+                    <h3>จุดถ่ายรูปสุดปัง</h3>
+                    <ul>
+                        <li>📍 <strong>The Bund ตอนค่ำ</strong> — วิว Skyline สุดอลัง</li>
+                        <li>📍 <strong>Tianzifang</strong> — ตรอกเล็กๆ สไตล์อาร์ต</li>
+                        <li>📍 <strong>French Concession</strong> — ถนนร่มรื่น มีมุมถ่ายเยอะ</li>
+                        <li>📍 <strong>Yu Garden</strong> — สถาปัตยกรรมจีนโบราณ</li>
+                        <li>📍 <strong>Shanghai Tower</strong> — ชมวิว 360°</li>
+                        <li>💡 ถ่ายรูปฉากเมืองช่วง 17:00-19:00 แสงสวยมาก</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Price Calculator -->
+    <section id="calculator">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">💱 คำนวณเงิน</span>
+                <h2>แปลง<span class="text-gradient">หยวน</span>เป็น<span class="text-gradient">บาท</span></h2>
+                <p>อัตราแลกเปลี่ยนโดยประมาณ: 1 หยวน (CNY) ≈ 5 บาท (THB)</p>
+            </div>
+
+            <div class="calculator-card">
+                <div class="calc-row">
+                    <div class="calc-input-group">
+                        <label for="cnyInput">🇨🇳 จำนวนเงิน (หยวน)</label>
+                        <input type="number" id="cnyInput" placeholder="ใส่จำนวนหยวน..." min="0" step="0.01">
+                    </div>
+                    <div class="calc-arrow">→</div>
+                    <div class="calc-result-group">
+                        <label>🇹🇭 ราคาเป็นบาท</label>
+                        <div class="calc-result" id="thbResult">0.00 บาท</div>
+                    </div>
+                </div>
+                <div class="calc-rate">
+                    💡 อัตราแลกเปลี่ยนประมาณ: <strong>1 CNY = <span id="rateDisplay">5.00</span> THB</strong>
+                    <br><small>* อัตราแลกเปลี่ยนโดยประมาณ อาจแตกต่างจากจริงเล็กน้อย กรุณาเช็คอัตราล่าสุดก่อนแลกเงิน</small>
+                </div>
+
+                <div class="quick-calc">
+                    <h4>💡 ราคาที่ใช้บ่อย</h4>
+                    <div class="quick-items">
+                        <div class="quick-item">
+                            <span>ตั๋ว Metro</span>
+                            <span>3-10 ¥</span>
+                            <span class="thb">~15-50 ฿</span>
+                        </div>
+                        <div class="quick-item">
+                            <span>อาหาร Street Food</span>
+                            <span>15-30 ¥</span>
+                            <span class="thb">~75-150 ฿</span>
+                        </div>
+                        <div class="quick-item">
+                            <span>อาหารร้านปกติ</span>
+                            <span>30-80 ¥</span>
+                            <span class="thb">~150-400 ฿</span>
+                        </div>
+                        <div class="quick-item">
+                            <span>กาแฟ/ชานม</span>
+                            <span>15-35 ¥</span>
+                            <span class="thb">~75-175 ฿</span>
+                        </div>
+                        <div class="quick-item">
+                            <span>แท็กซี่ (เริ่มต้น)</span>
+                            <span>14 ¥</span>
+                            <span class="thb">~70 ฿</span>
+                        </div>
+                        <div class="quick-item">
+                            <span>น้ำดื่มขวด</span>
+                            <span>2-5 ¥</span>
+                            <span class="thb">~10-25 ฿</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Map -->
+    <section id="map">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">🗺️ แผนที่</span>
+                <h2>แผนที่<span class="text-gradient">สถานที่ท่องเที่ยว</span></h2>
+                <p>คลิกที่หมุดเพื่อดูข้อมูลสถานที่ พร้อมราคาและวิธีเดินทาง</p>
+            </div>
+            <div class="map-legend">
+                <span class="legend-item"><span class="legend-dot budget-dot-low"></span> งบน้อย</span>
+                <span class="legend-item"><span class="legend-dot budget-dot-mid"></span> งบปานกลาง</span>
+                <span class="legend-item"><span class="legend-dot budget-dot-high"></span> งบเยอะ</span>
+            </div>
+            <div id="mapContainer"></div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <span class="footer-logo">🏙️ Shanghai<span class="logo-highlight">Guide</span></span>
+                    <p>เว็บแนะนำสถานที่ท่องเที่ยวเซี่ยงไฮ้สำหรับคนไทย<br>จัดทำด้วย ❤️ เพื่อนักเดินทางชาวไทยทุกคน</p>
+                </div>
+                <div class="footer-links">
+                    <h4>ลิงก์ด่วน</h4>
+                    <ul>
+                        <li><a href="#attractions">สถานที่ท่องเที่ยว</a></li>
+                        <li><a href="#location">แนะนำตามทำเล</a></li>
+                        <li><a href="#transport">การเดินทาง</a></li>
+                        <li><a href="#solo">Solo Trip</a></li>
+                        <li><a href="#calculator">คำนวณเงิน</a></li>
+                        <li><a href="#map">แผนที่</a></li>
+                    </ul>
+                </div>
+                <div class="footer-info">
+                    <h4>ข้อมูลเพิ่มเติม</h4>
+                    <ul>
+                        <li>💱 1 CNY ≈ 5 THB (โดยประมาณ)</li>
+                        <li>🕐 เวลาเซี่ยงไฮ้ = เวลาไทย +1 ชม.</li>
+                        <li>🛂 Transit Visa-Free 144 ชม.</li>
+                        <li>📞 สถานทูตไทย: +86-21-52609899</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-credit">
+                    <p>Made with ❤️ by <span class="credit-name">Ampsoria</span></p>
+                    <p class="footer-year">© 2026 Shanghai Guide สำหรับคนไทย — All rights reserved</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
